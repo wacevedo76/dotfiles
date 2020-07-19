@@ -1,0 +1,38 @@
+# Get External IP / local IPs
+alias ip="curl ipinfo.io/ip"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+
+# Quickly serve the current directory as HTTP
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+alias composer="$HOME/.local/bin/composer/composer.phar"
+
+alias cdanon='cd /media/smb/Anonymous'
+alias cdaudio='cd /media/smb/Audio'
+alias cdbooks='cd /media/smb/Books'
+alias cdsoftware='cd /media/smb/Software'
+alias cdtor='cd /media/smb/Torrents'
+alias cdvideos='cd /media/smb/Videos'
+
+alias cdcode='cd $HOME/code'
+alias cdwa='cd $HOME/code/wacevedo76'
+alias cdtrain='cd $HOME/code/training'
+alias mybooks='$HOME/Documents/books'
+alias mynotes='$HOME/Documents/notes'
+alias mydownloads='$HOME/Downloads'
+alias mywa='$HOME/code/wacevedo76'
+alias mytrain='$HOME/code/training'
+alias cdfullstack='$HOME/code/wacevedo76/fullstack-challenges'
+
+alias t='tmux ls'
+alias tns='tmux new -s'
+alias tat='tmux a -t'
+
+alias brspec='bundle exec rspec -fd'
+
+alias nvim='$HOME/.local/bin/nvim/nvim.appimage'
+
+alias bright='xrandr --output LVDS1 --brightness'
+
+alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
