@@ -1,3 +1,5 @@
+let mapleader = "-"
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -32,10 +34,11 @@ Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'prettier/vim-prettier'
 Plug 'Valloric/YouCompleteMe'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
-" ------------------------------------------------------------------------------
 
 " remap esc
+inoremap <esc> <nop>
 inoremap jk <ESC>
 
 " swp directory
@@ -70,6 +73,14 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-" Snipits
-nnoremap ,re :-1read $HOME/.vim/snips/.skeleton.ruby.re<CR>3l
-nnoremap ,rn :-1read $HOME/.vim/snips/.skeleton.ruby.rn<CR>2l
+" open .vimrc in new split | reload vimrc changes
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :so $MYVIMRC<cr>
+
+" My signature
+iabbrev ssig William Acevedo<cr>----------------------------------------<cr><tab>william.acevedo@gmail.com<cr>
+
+"----------------------------------------------------
+" quote wrap words
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
