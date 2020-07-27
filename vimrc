@@ -1,11 +1,12 @@
 let mapleader = "-"
+let maplocallleader = "//"
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 syntax on
 
-set ai ruler nowrap linebreak autoindent cindent relativenumber nu autoindent
+set ai ruler nowrap linebreak autoindent cindent relativenumber autoindent
 
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
