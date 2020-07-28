@@ -1,22 +1,10 @@
 let mapleader = "-"
 let maplocallleader = "//"
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-syntax on
-
-set ai ruler nowrap linebreak autoindent cindent relativenumber autoindent
+set nocompatible ruler nowrap linebreak nu relativenumber autoindent
 
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
-
-if has("multi_byte")
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-else
-  echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
-endif
 
 " -------- Plug plugin manager start ---------------------------------------------
 "  Autoload
@@ -39,7 +27,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 " remap esc
-inoremap <esc> <nop>
 inoremap jk <ESC>
 
 " swp directory
