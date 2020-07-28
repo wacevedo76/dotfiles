@@ -37,3 +37,4 @@ alias nvim='$HOME/.local/bin/nvim/nvim.appimage'
 alias bright='xrandr --output LVDS1 --brightness'
 
 alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
+alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
