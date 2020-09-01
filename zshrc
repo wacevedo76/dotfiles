@@ -3,14 +3,14 @@ ZSH=$HOME/.oh-my-zsh
 # You can change the theme with another one:
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="agnoster"
-
+# ZSH_THEME="michelebologna"
 # Useful plugins for Rails development with Sublime Text
-plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search)
+plugins=(gitfast common-aliases zsh-syntax-highlighting history-substring-search)
 
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
-
+bindkey -v
 # powerline
 # source '/usr/share/powerline/bindings/zsh/powerline.zsh' 
 
@@ -30,6 +30,7 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
+export EDITOR=vim
 export BUNDLER_EDITOR="atom $@ >/dev/null 2>&1 -a"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$PATH"
@@ -40,7 +41,6 @@ function mkcd {
   command mkdir -p $1 && cd $1
 }
 
-bindkey -v
 
 prompt_dir () {
   prompt_segment blue black '%2/'

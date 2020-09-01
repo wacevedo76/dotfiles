@@ -1,11 +1,14 @@
-let mapleader = "-"
+let mapleader = '-'
 let maplocallleader = "//"
 
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
+set foldenable
+set foldmethod=indent
 
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
 
+colo desert
 " -------- Plug plugin manager start ---------------------------------------------
 "  Autoload
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -29,6 +32,8 @@ call plug#end()
 " remap esc
 inoremap jk <ESC>
 
+" auto indent correction
+nnoremap <F7> gg=<C-o><C-o>
 " swp directory
 set directory=$HOME/.vim/swap//
 
@@ -63,6 +68,9 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 
 " My signature
 iabbrev ssig William Acevedo<cr>----------------------------------------<cr><tab>william.acevedo@gmail.com<cr>
+
+" fzf
+nnoremap <leader>ff :FZF<cr>
 
 "----------------------------------------------------
 " quote wrap words

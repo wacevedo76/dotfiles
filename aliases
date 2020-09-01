@@ -25,11 +25,21 @@ alias mywa='$HOME/code/wacevedo76'
 alias mytrain='$HOME/code/training'
 alias cdfullstack='$HOME/code/wacevedo76/fullstack-challenges'
 
+# tmux aliases
 alias t='tmux ls'
 alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
 
+# git aliases
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gd='git diff'
+alias gpushom='git push origin master'
+alias gpushoh='git push origin heroku'
+alias gpullom='git push origin master'
+alias gpulloh='git push origin heroku'
 alias brspec='bundle exec rspec -fd'
 
 alias nvim='$HOME/.local/bin/nvim/nvim.appimage'
@@ -38,3 +48,17 @@ alias bright='xrandr --output LVDS1 --brightness'
 
 alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
 alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
+
+# fzf
+alias v='vim $(fzf)'
+# connect to home server
+alias conhs01='ssh -p 50554 wacevedo@192.168.1.217'
+
+# connect wifi network
+alias homenetup='nmcli connection up uuid 90b7b0e1-a09b-48b8-ada4-01e0cdf7d4d6'
+alias homenetdown='nmcli device disconnect wlp3s0'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias mutt=neomutt
