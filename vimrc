@@ -27,6 +27,7 @@ Plug 'SirVer/ultisnips'
 Plug 'prettier/vim-prettier'
 Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'tkhren/vim-fake'
 call plug#end()
 
 " remap esc
