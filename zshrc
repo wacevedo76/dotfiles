@@ -5,6 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 # ZSH_THEME="michelebologna"
 # Useful plugins for Rails development with Sublime Text
+source /home/wacevedo/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 plugins=(gitfast common-aliases zsh-syntax-highlighting history-substring-search)
 
 # Actually load Oh-My-Zsh
@@ -41,9 +42,10 @@ function mkcd {
   command mkdir -p $1 && cd $1
 }
 
-
 prompt_dir () {
   prompt_segment blue black '%2/'
 }
 
 export MYVIMRC="$HOME/.vimrc"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

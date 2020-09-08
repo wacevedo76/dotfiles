@@ -1,12 +1,9 @@
+alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
+
 # Get External IP / local IPs
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
-
-# Quickly serve the current directory as HTTP
-alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
-
-alias composer="$HOME/.local/bin/composer/composer.phar"
 
 alias cdanon='cd /media/smb/Anonymous'
 alias cdaudio='cd /media/smb/Audio'
@@ -40,23 +37,23 @@ alias gpushom='git push origin master'
 alias gpushoh='git push origin heroku'
 alias gpullom='git push origin master'
 alias gpulloh='git push origin heroku'
-alias brspec='bundle exec rspec -fd'
 
-alias nvim='$HOME/.local/bin/nvim/nvim.appimage'
+# connect to home server
+alias conhs01='ssh -p 50554 wacevedo@hs01'
+
+# ruby aliases
+alias brspec='bundle exec rspec -fd'
+alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
+# Quickly serve the current directory as HTTP
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+# php aliases
+alias composer="$HOME/.local/bin/composer/composer.phar"
 
 alias bright='xrandr --output LVDS1 --brightness'
 
-alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
-alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
-
 # fzf
 alias v='vim $(fzf)'
-# connect to home server
-alias conhs01='ssh -p 50554 wacevedo@192.168.1.217'
-
-# connect wifi network
-alias homenetup='nmcli connection up uuid 90b7b0e1-a09b-48b8-ada4-01e0cdf7d4d6'
-alias homenetdown='nmcli device disconnect wlp3s0'
 
 alias ..='cd ..'
 alias ...='cd ../..'
