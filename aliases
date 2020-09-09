@@ -38,9 +38,6 @@ alias gpushoh='git push origin heroku'
 alias gpullom='git pull origin master'
 alias gpulloh='git pull origin heroku'
 
-# connect to home server
-alias conhs01='ssh -p 50554 wacevedo@hs01'
-
 # ruby aliases
 alias brspec='bundle exec rspec -fd'
 alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
