@@ -35,8 +35,8 @@ alias gc='git commit -m'
 alias gd='git diff'
 alias gpushom='git push origin master'
 alias gpushoh='git push origin heroku'
-alias gpullom='git push origin master'
-alias gpulloh='git push origin heroku'
+alias gpullom='git pull origin master'
+alias gpulloh='git pull origin heroku'
 
 # connect to home server
 alias conhs01='ssh -p 50554 wacevedo@hs01'
