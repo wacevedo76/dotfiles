@@ -2,13 +2,16 @@ let mapleader = '-'
 let maplocallleader = "//"
 
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
-set foldenable
-set foldmethod=indent
-
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
 
 colo desert
+
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
+
 " -------- Plug plugin manager start ---------------------------------------------
 "  Autoload
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -19,15 +22,15 @@ endif
 
 " 3rd-party plugin list
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree'
-Plug 'mattn/emmet-vim'
-Plug 'SirVer/ultisnips'
-Plug 'prettier/vim-prettier'
-Plug 'Valloric/YouCompleteMe'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'tkhren/vim-fake'
+  Plug 'tpope/vim-fugitive'
+  Plug 'vim-airline/vim-airline'
+  Plug 'preservim/nerdtree'
+  Plug 'mattn/emmet-vim'
+  Plug 'SirVer/ultisnips'
+  Plug 'prettier/vim-prettier'
+  Plug 'Valloric/YouCompleteMe'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'tkhren/vim-fake'
 call plug#end()
 
 " remap esc
@@ -35,6 +38,7 @@ inoremap jk <ESC>
 
 " auto indent correction
 nnoremap <F7> gg=<C-o><C-o>
+
 " swp directory
 set directory=$HOME/.vim/swap//
 
