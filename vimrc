@@ -1,5 +1,5 @@
 let mapleader = '-'
-let maplocallleader = "//"
+let maplocalleader = "//"
 
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
 set backspace=indent,eol,start
@@ -29,9 +29,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'prettier/vim-prettier'
   Plug 'Valloric/YouCompleteMe'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
   Plug 'tkhren/vim-fake'
 call plug#end()
+
+" NerdTree function
+function! ToggleNERDTree()
+  NERDTreeToggle
+  silent NERDTreeMirror
+endfunction
 
 " remap esc
 inoremap jk <ESC>
@@ -43,7 +50,7 @@ nnoremap <F7> gg=<C-o><C-o>
 set directory=$HOME/.vim/swap//
 
 " colo koehler
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
+nnoremap <silent> <F3> :call ToggleNERDTree()<CR>
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
 inoremap [ []<Esc>:let leavechar="]"<CR>i
 inoremap { {}<Esc>:let leavechar="}"<CR>i
@@ -75,7 +82,9 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 iabbrev ssig William Acevedo<cr>----------------------------------------<cr><tab>william.acevedo@gmail.com<cr>
 
 " fzf
-nnoremap <leader>ff :FZF<cr>
+nnoremap <leader>f :FZF<cr>
+nnoremap // :BLines!<CR>
+nnoremap ?? :Rg!<CR>
 
 "----------------------------------------------------
 " quote wrap words
