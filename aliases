@@ -13,6 +13,7 @@ alias cdtor='cd /media/smb/Torrents'
 alias cdvideos='cd /media/smb/Videos'
 
 alias mycode='cd $HOME/code'
+alias mydocs='cd $HOME/Documents'
 alias mybooks='$HOME/Documents/Books'
 alias mynotes='$HOME/Documents/Notes'
 alias mydownloads='$HOME/Downloads'
