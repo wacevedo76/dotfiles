@@ -4,6 +4,7 @@ let maplocalleader = "//"
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
+set colorcolumn=80
 
 colo desert
 
@@ -12,7 +13,7 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
-" -------- Plug plugin manager start ---------------------------------------------
+" -------- Plug plugin manager start -------------------------------------------
 "  Autoload
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs 
