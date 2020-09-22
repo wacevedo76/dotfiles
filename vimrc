@@ -41,8 +41,8 @@ function! ToggleNERDTree()
   silent NERDTreeMirror
 endfunction
 
-" remap esc
-inoremap jk <ESC>
+" remap <Esc>
+inoremap jk <Esc>
 
 " auto indent correction
 nnoremap <F7> gg=<C-o><C-o>
@@ -83,11 +83,11 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 iabbrev ssig William Acevedo<cr>----------------------------------------<cr><tab>william.acevedo@gmail.com<cr>
 
 " fzf
-nnoremap <leader>f :FZF<cr>
+nnoremap <leader>f :FZF<CR>
 nnoremap // :BLines!<CR>
 nnoremap ?? :Rg!<CR>
 
 "----------------------------------------------------
 " quote wrap words
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+nnoremap <leader>" viw<Esc>a"<Esc>bi"<Esc>lel
+nnoremap <leader>' viw<Esc>a'<Esc>bi'<Esc>lel
