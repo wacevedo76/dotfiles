@@ -5,6 +5,8 @@ set nocompatible ruler nowrap linebreak nu relativenumber autoindent
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
 
+set hlsearch
+
 call matchadd('ColorColumn', '\%81v', 100)
 
 colo desert
@@ -48,6 +50,8 @@ inoremap jk <Esc>
 " auto indent correction
 nnoremap <F7> gg=<C-o><C-o>
 
+" Press space to clear hlsearch
+nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
 " swp directory
 set directory=$HOME/.vim/swap//
 
