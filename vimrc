@@ -4,7 +4,8 @@ let maplocalleader = "//"
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
-set colorcolumn=80
+
+call matchadd('ColorColumn', '\%81v', 100)
 
 colo desert
 

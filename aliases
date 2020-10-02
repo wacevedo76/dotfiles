@@ -55,3 +55,5 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias mutt=neomutt
+
+alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
