@@ -16,6 +16,9 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
 " -------- Plug plugin manager start -------------------------------------------
 "  Autoload
 if empty(glob('~/.vim/autoload/plug.vim'))
