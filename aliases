@@ -32,9 +32,9 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit -m'
 alias gd='git diff'
-alias gpushom='git push origin master'
+alias gpushom='git push origin main'
 alias gpushoh='git push origin heroku'
-alias gpullom='git pull origin master'
+alias gpullom='git pull origin main'
 alias gpulloh='git pull origin heroku'
 
 # ruby aliases
