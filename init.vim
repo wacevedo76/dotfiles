@@ -228,6 +228,7 @@ nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
+nnoremap tm :tabm<Space>
 
 " open init.vim in new split | reload vimrc changes
 nnoremap <leader>ev :vsplit $MYNVIMRC<cr>
