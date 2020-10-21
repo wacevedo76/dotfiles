@@ -1,5 +1,7 @@
 let mapleader = '-'
 
+syntax enable
+
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
@@ -16,8 +18,8 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+"autocmd BufWinLeave *.* mkview
+"autocmd BufWinEnter *.* silent loadview
 
 " -------- Plugged -------------------------------------------------------------
 if empty(glob('~/.local/nvim/site/autoload/plug.vim'))
@@ -219,6 +221,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" toggle numbered lines
+nnoremap <leader>t :set nu! relativenumber!<CR>
 
 set splitbelow splitright
 
