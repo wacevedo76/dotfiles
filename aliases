@@ -32,10 +32,7 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit -m'
 alias gd='git diff'
-alias gpushom='git push origin main'
-alias gpushoh='git push origin heroku'
-alias gpullom='git pull origin main'
-alias gpulloh='git pull origin heroku'
+alias gl='git log'
 
 # ruby aliases
 alias brspec='bundle exec rspec -fd'
