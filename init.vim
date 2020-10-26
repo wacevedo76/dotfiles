@@ -13,13 +13,19 @@ nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
 call matchadd('ColorColumn', '\%81v', 100)
 colo desert
 
+augroup AutoSaveFolds
+  " view files are about 500 bytes
+  " bufleave, but not bufwinleaves, captures closing 2nd tab
+  " nested is needed by bufwrite* (if triggered via other autocmd)
+  autocmd!
+  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadview
+augroup end
+
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
-
-"autocmd BufWinLeave *.* mkview
-"autocmd BufWinEnter *.* silent loadview
 
 " -------- Plugged -------------------------------------------------------------
 if empty(glob('~/.local/nvim/site/autoload/plug.vim'))
@@ -206,7 +212,6 @@ nnoremap <F7> gg=<C-o><C-o>
 " swp directory
 set directory=$HOME/.config/nvim/swap//
 
-" colo koehler
 nnoremap <silent> <F3> :call ToggleNERDTree()<CR>
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
 inoremap [ []<Esc>:let leavechar="]"<CR>i
