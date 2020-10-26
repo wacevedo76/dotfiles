@@ -1,9 +1,9 @@
 alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
 
 # Get External IP / local IPs
-alias ip="curl ipinfo.io/ip"
-alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+# alias ip="curl ipinfo.io/ip"
+# alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+# alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 
 alias cdanon='cd /media/smb/Anonymous'
 alias cdaudio='cd /media/smb/Audio'
@@ -57,3 +57,5 @@ alias ...='cd ../..'
 alias mutt=neomutt
 
 alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
+
+alias irc=irssi
