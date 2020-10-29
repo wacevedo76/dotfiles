@@ -34,7 +34,7 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export BUNDLER_EDITOR="atom $@ >/dev/null 2>&1 -a"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:/usr/bin/python3:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.local/bin:/usr/bin/python3:$PATH"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
