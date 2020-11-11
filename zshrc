@@ -1,3 +1,10 @@
+#                                        _                 _
+#  __      ____ _  ___ _____   _____  __| | ___    _______| |__  _ __ ___
+#  \ \ /\ / / _` |/ __/ _ \ \ / / _ \/ _` |/ _ \  |_  / __| '_ \| '__/ __|
+#   \ V  V | (_| | (_|  __/\ V |  __| (_| | (_)    / /\__ | | | | | | (__
+#    \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/  /___|___|_| |_|_|  \___|
+
+
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one:
@@ -22,7 +29,7 @@ type -a rbenv > /dev/null && eval "$(rbenv init -)"
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
 # Same for `./node_modules/.bin` and nodejs
-export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
+export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin:${PATH}"
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -34,7 +41,7 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export BUNDLER_EDITOR="atom $@ >/dev/null 2>&1 -a"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.local/bin:/usr/bin/python3:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.local/bin:/usr/bin/python3:${PATH}"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

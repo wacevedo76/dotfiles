@@ -1,8 +1,15 @@
+"                                       _                               _
+" __      ____ _  ___ _____   _____  __| | ___    _ __   ___  _____   _(_)_ __ ___
+" \ \ /\ / / _` |/ __/ _ \ \ / / _ \/ _` |/ _ \  | '_ \ / _ \/ _ \ \ / | | '_ ` _ \
+"  \ V  V | (_| | (_|  __/\ V |  __| (_| | (_) | | | | |  __| (_) \ V /| | | | | | |
+"   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/  |_| |_|\___|\___/ \_/ |_|_| |_| |_|
+
 let mapleader = '-'
 
 syntax enable
 
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
+filetype plugin on
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
 
@@ -22,10 +29,10 @@ augroup AutoSaveFolds
   autocmd BufWinEnter ?* silent! loadview
 augroup end
 
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
+:""augroup vimrc
+""  au BufReadPre * setlocal foldmethod=indent
+""  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+""augroup END
 
 " -------- Plugged -------------------------------------------------------------
 if empty(glob('~/.local/nvim/site/autoload/plug.vim'))
@@ -241,9 +248,8 @@ nnoremap tl :tablast<CR>
 nnoremap tm :tabm<Space>
 
 " open init.vim in new split | reload vimrc changes
-nnoremap <leader>ev :vsplit $MYNVIMRC<cr>
-nnoremap <leader>sv :so $MYNVIMRC<cr>
-
+nnoremap <leader>ev :vsplit $MYNVIMRC<CR>
+nnoremap <leader>sv :so $MYNVIMRC<CR> 
 " fzf
 nnoremap <leader>f :FZF<cr>
 nnoremap // :BLines!<CR>
