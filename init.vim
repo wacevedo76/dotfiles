@@ -13,27 +13,6 @@ filetype plugin on
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
 
-" Highlight search and clear
-set hlsearch
-nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
-
-call matchadd('ColorColumn', '\%81v', 100)
-colo desert
-
-augroup AutoSaveFolds
-  " view files are about 500 bytes
-  " bufleave, but not bufwinleaves, captures closing 2nd tab
-  " nested is needed by bufwrite* (if triggered via other autocmd)
-  autocmd!
-  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
-  autocmd BufWinEnter ?* silent! loadview
-augroup end
-
-:""augroup vimrc
-""  au BufReadPre * setlocal foldmethod=indent
-""  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-""augroup END
-
 " -------- Plugged -------------------------------------------------------------
 if empty(glob('~/.local/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/nvim/site/autoload/plug.vim --create-dirs
@@ -51,7 +30,31 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install -all' }
   Plug 'junegunn/fzf.vim'
   Plug 'tkhren/vim-fake'
+  Plug 'morhetz/gruvbox'
 call plug#end()
+
+colo gruvbox
+set background=dark
+
+" Highlight search and clear
+set hlsearch
+nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
+
+call matchadd('ColorColumn', '\%81v', 100)
+
+augroup AutoSaveFolds
+  " view files are about 500 bytes
+  " bufleave, but not bufwinleaves, captures closing 2nd tab
+  " nested is needed by bufwrite* (if triggered via other autocmd)
+  autocmd!
+  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadview
+augroup end
+
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 
 " -------- Coc -----------------------------------------------------------------
 " TextEdit might fail if hidden is not set.
@@ -258,3 +261,8 @@ nnoremap ?? :Rg!<CR>
 " quote wrap words
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+
+" git-fugitive mappings
+nnoremap <leader>gh :diffget //3<CR>
+nnoremap <leader>gu :diffget //2<CR>
+nnoremap <leader>gs :G<CR>
