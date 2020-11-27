@@ -9,6 +9,8 @@ let mapleader = '-'
 syntax enable
 
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
+set cursorline
+
 filetype plugin on
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
@@ -215,6 +217,7 @@ endfunction
 
 " remap esc
 inoremap jk <ESC>
+vnoremap jk <ESC>
 
 " auto indent correction
 nnoremap <F7> gg=<C-o><C-o>
