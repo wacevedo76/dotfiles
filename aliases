@@ -4,7 +4,7 @@
 #  \ V  V | (_| | (_|  __/\ V |  __| (_| | (_) | | (_| | | | (_| \__ |  __\__ \
 #   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/   \__,_|_|_|\__,_|___/\___|___/
 
-alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
+alias dotfiles='cd $HOME/code/*/dotfiles/'
 
 alias cdanon='cd /media/smb/Anonymous'
 alias cdaudio='cd /media/smb/Audio'
@@ -18,9 +18,9 @@ alias mydocs='cd $HOME/Documents'
 alias mybooks='$HOME/Documents/Books'
 alias mynotes='$HOME/Documents/Notes'
 alias mydownloads='$HOME/Downloads'
-alias mywa='$HOME/code/wacevedo76'
+alias mywa='$HOME/code/*'
 alias mytrain='$HOME/code/training'
-alias cdfullstack='$HOME/code/wacevedo76/fullstack-challenges'
+alias cdfullstack='$HOME/code/*/fullstack-challenges'
 
 # shell aliases
 alias ..='cd ..'

@@ -12,7 +12,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 # ZSH_THEME="michelebologna"
 # Useful plugins for Rails development with Sublime Text
-source /home/wacevedo/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/*/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 plugins=(gitfast common-aliases zsh-syntax-highlighting history-substring-search)
 
 # Actually load Oh-My-Zsh
