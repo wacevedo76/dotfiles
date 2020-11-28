@@ -1,0 +1,27 @@
+# ----------------- Timer function - Bash Script -------------------------------
+function ts()
+{
+  date=$((`date + %s` + $1));
+  while [ "$date" -ne `date + %s` ]; do
+    echo -ne "  $(date -u --date @$(($date - `date +%s`)) +%H:%M:%S)\r";
+    sleep 1
+  done
+  play_sound ~/Audio/digitalAlarm01.wav
+}
+
+function play_sound()
+{
+  cat $1 | aplay
+}
+
+function tm()
+{
+  echo "Timer set for $1 minutes"
+  ts $1*60
+}
+
+function th()
+{
+  echo "Timer set for $1 hours"
+  ts $1*60*50
+}

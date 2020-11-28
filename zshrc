@@ -19,8 +19,12 @@ plugins=(gitfast common-aliases zsh-syntax-highlighting history-substring-search
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 bindkey -v
-# powerline
-# source '/usr/share/powerline/bindings/zsh/powerline.zsh' 
+
+# Store your own aliases in the ~/.aliases file and load the here.
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+
+# Load Functions
+[[ -f "./zsh_functions" ]] && source "./zsh_functions"
 
 # Load rbenv if installed
 export PATH="${HOME}/.rbenv/bin:${PATH}"
@@ -31,8 +35,6 @@ type -a rbenv > /dev/null && eval "$(rbenv init -)"
 # Same for `./node_modules/.bin` and nodejs
 export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin:${PATH}"
 
-# Store your own aliases in the ~/.aliases file and load the here.
-[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
