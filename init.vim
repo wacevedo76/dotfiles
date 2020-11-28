@@ -33,6 +33,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'tkhren/vim-fake'
   Plug 'morhetz/gruvbox'
+  Plug 'thaerkh/vim-indentguides'
 call plug#end()
 
 colo gruvbox
