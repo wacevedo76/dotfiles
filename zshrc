@@ -62,7 +62,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 function countdown(){
-   date1=$((`date +%s` + $1)); 
+   date1=$((`date +%s` + $1 * 60)); 
    while [ "$date1" -ge `date +%s` ]; do 
      echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
      sleep 0.1
