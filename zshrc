@@ -27,14 +27,12 @@ bindkey -v
 [[ -f "./zsh_functions" ]] && source "./zsh_functions"
 
 # Load rbenv if installed
-export PATH="${HOME}/.rbenv/bin:${PATH}"
+export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/ruby-build/bin:${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}/.local/bin:/usr/bin/python3:./bin:./node_modules/.bin:${PATH}:/usr/local/sbin:${PATH}"
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
 # Same for `./node_modules/.bin` and nodejs
-export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin:${PATH}"
-
 
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
@@ -42,9 +40,6 @@ export LC_ALL=en_US.UTF-8
 # export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export EDITOR=vim
 export BUNDLER_EDITOR="atom $@ >/dev/null 2>&1 -a"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.local/bin:/usr/bin/python3:${PATH}"
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
