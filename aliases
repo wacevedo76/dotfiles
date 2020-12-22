@@ -15,12 +15,12 @@ alias cdvideos='cd /media/smb/Videos'
 
 alias mycode='cd $HOME/code'
 alias mydocs='cd $HOME/Documents'
-alias mybooks='$HOME/Documents/Books'
-alias mynotes='$HOME/Documents/Notes'
-alias mydownloads='$HOME/Downloads'
-alias mywa='$HOME/code/*'
-alias mytrain='$HOME/code/training'
-alias cdfullstack='$HOME/code/*/fullstack-challenges'
+alias mybooks='cd $HOME/Documents/Books'
+alias mynotes='cd $HOME/Documents/Notes'
+alias mydownloads='cd $HOME/Downloads'
+alias mywa='cd $HOME/code/wacevedo76'
+alias mytrain='cd $HOME/code/wacevedo76/training'
+alias cdfullstack='cd $HOME/code/*/fullstack-challenges'
 
 # shell aliases
 alias ..='cd ..'
