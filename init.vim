@@ -216,6 +216,9 @@ function! ToggleNERDTree()
   silent NERDTreeMirror
 endfunction
 
+" templates
+au BufNewFile * silent! 0r ~/.config/nvim/templates/%:e.tpl
+
 " remap esc
 inoremap jk <ESC>
 vnoremap jk <ESC>
@@ -263,10 +266,14 @@ nnoremap // :BLines!<CR>
 nnoremap ?? :Rg!<CR>
 
 " quote wrap words
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+nnoremap <leader>" viw<ESC>a"<ESC>bi"<ESC>lel
+nnoremap <leader>' viw<ESC>a'<ESC>bi'<ESC>lel
 
 " git-fugitive mappings
 nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gu :diffget //2<CR>
 nnoremap <leader>gs :G<CR>
+
+" self Definded mappings 
+" Enter date
+nnoremap <leader>dt "ad$<ESC>:r !date<CR>i<BS><ESC>$bbdwd6b$"ap
