@@ -4,18 +4,20 @@
 "  \ V  V | (_| | (_|  __/\ V |  __| (_| | (_) | | | | |  __| (_) \ V /| | | | | | |
 "   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/  |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
+"set Leader key
 let mapleader = '-'
 
-syntax enable
+set backspace=indent,eol,start
+set tabstop=2 shiftwidth=2 expandtab
 
 set nocompatible ruler nowrap linebreak nu relativenumber autoindent
 set cursorline
 
 filetype plugin on
-set backspace=indent,eol,start
-set tabstop=2 shiftwidth=2 expandtab
+syntax enable
+syntax on
 
-" -------- Plugged -------------------------------------------------------------
+" ------- Plugged --------------------------------------------------------------
 if empty(glob('~/.local/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -34,8 +36,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tkhren/vim-fake'
   Plug 'morhetz/gruvbox'
   Plug 'thaerkh/vim-indentguides'
+  Plug 'vimwiki/vimwiki'
 call plug#end()
+" --------- End Plugged --------------------------------------------------------
 
+" Set theme
 colo gruvbox
 set background=dark
 
@@ -43,6 +48,7 @@ set background=dark
 set hlsearch
 nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
 
+" Set colorcolumn
 call matchadd('ColorColumn', '\%81v', 100)
 
 augroup AutoSaveFolds
@@ -209,7 +215,15 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-"-------------------------------------------------------------------------------"
+" ------- End coc --------------------------------------------------------------
+
+"-------- Vimwiki stuff --------------------------------------------------------
+" Run multiple wikis
+let g:vimwiki_list = [
+  \ {'path': '~/code/wacevedo76/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}
+  \ ]
+"-------------------------------------------------------------------------------
+
 " Nerd Tree function
 function! ToggleNERDTree()
   NERDTreeToggle
