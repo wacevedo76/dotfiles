@@ -220,7 +220,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "-------- Vimwiki stuff --------------------------------------------------------
 " Run multiple wikis
 let g:vimwiki_list = [
-  \ {'path': '~/code/wacevedo76/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}
+  \ {'path': '~/code/wacevedo76/vimwiki/', 'syntax': 'media', 'ext': '.wiki'}
   \ ]
 "-------------------------------------------------------------------------------
 
