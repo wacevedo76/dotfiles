@@ -5,7 +5,7 @@
 "   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/  |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
 "set Leader key
-let mapleader = '-'
+let mapleader = ','
 
 set backspace=indent,eol,start
 set tabstop=2 shiftwidth=2 expandtab
@@ -291,3 +291,6 @@ nnoremap <leader>gs :G<CR>
 " self Definded mappings 
 " Enter date
 nnoremap <leader>dt "ad$<ESC>:r !date<CR>i<BS><ESC>$bbdwd6b$"ap
+
+" Emmet mappings
+let g:user_emmet_expandabbr_key='<Tab>'
