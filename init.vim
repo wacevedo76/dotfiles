@@ -3,14 +3,25 @@
 " \ \ /\ / / _` |/ __/ _ \ \ / / _ \/ _` |/ _ \  | '_ \ / _ \/ _ \ \ / | | '_ ` _ \
 "  \ V  V | (_| | (_|  __/\ V |  __| (_| | (_) | | | | |  __| (_) \ V /| | | | | | |
 "   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/  |_| |_|\___|\___/ \_/ |_|_| |_| |_|
+"
 
 "set Leader key
 let mapleader = ','
 
 set backspace=indent,eol,start
-set tabstop=2 shiftwidth=2 expandtab
-
-set nocompatible ruler nowrap linebreak nu relativenumber autoindent
+set tabstop=2 softtabstop=2 
+set shiftwidth=2 
+set expandtab
+set smartindent
+set hidden
+set noerrorbells
+set incsearch
+set ruler 
+set nowrap 
+set linebreak 
+set nu 
+set relativenumber 
+set autoindent
 set cursorline
 
 filetype plugin on
@@ -51,14 +62,13 @@ nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
 " Set colorcolumn
 call matchadd('ColorColumn', '\%81v', 100)
 
-augroup AutoSaveFolds
-  " view files are about 500 bytes
-  " bufleave, but not bufwinleaves, captures closing 2nd tab
-  " nested is needed by bufwrite* (if triggered via other autocmd)
-  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
-  autocmd BufWinEnter ?* silent! loadview
-  autocmd!
-augroup end
+" Automatically saves & loads when closing or opening a file
+set viewoptions-=options
+augroup remember_folds
+    autocmd!
+    autocmd BufWinLeave *.* if &ft !=# 'help' | mkview | endif
+    autocmd BufWinEnter *.* if &ft !=# 'help' | silent! loadview | endif
+augroup END
 
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
@@ -67,7 +77,7 @@ augroup END
 
 " -------- Coc -----------------------------------------------------------------
 " TextEdit might fail if hidden is not set.
-set hidden
+" set hidden
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -243,6 +253,7 @@ nnoremap <F7> gg=<C-o><C-o>
 " swp directory
 set directory=$HOME/.config/nvim/swap//
 
+" Auto create matching pairs
 nnoremap <silent> <F3> :call ToggleNERDTree()<CR>
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
 inoremap [ []<Esc>:let leavechar="]"<CR>i
@@ -261,6 +272,7 @@ nnoremap <C-l> <C-w>l
 " toggle numbered lines
 nnoremap <leader>t :set nu! relativenumber!<CR>
 
+" set split orientation
 set splitbelow splitright
 
 " tabs remaps
@@ -274,6 +286,7 @@ nnoremap tm :tabm<Space>
 " open init.vim in new split | reload vimrc changes
 nnoremap <leader>ev :vsplit $MYNVIMRC<CR>
 nnoremap <leader>sv :so $MYNVIMRC<CR> 
+
 " fzf
 nnoremap <leader>f :FZF<cr>
 nnoremap // :BLines!<CR>
