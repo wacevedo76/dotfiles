@@ -55,9 +55,9 @@ augroup AutoSaveFolds
   " view files are about 500 bytes
   " bufleave, but not bufwinleaves, captures closing 2nd tab
   " nested is needed by bufwrite* (if triggered via other autocmd)
-  autocmd!
   autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
   autocmd BufWinEnter ?* silent! loadview
+  autocmd!
 augroup end
 
 augroup vimrc
