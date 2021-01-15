@@ -7,6 +7,7 @@
 
 "set Leader key
 let mapleader = ','
+let maplocalleader = ',.'
 
 set backspace=indent,eol,start
 set tabstop=2 softtabstop=2 
@@ -255,12 +256,12 @@ set directory=$HOME/.config/nvim/swap//
 
 " Auto create matching pairs
 nnoremap <silent> <F3> :call ToggleNERDTree()<CR>
-inoremap ( ()<Esc>:let leavechar=")"<CR>i
-inoremap [ []<Esc>:let leavechar="]"<CR>i
-inoremap { {}<Esc>:let leavechar="}"<CR>i
-inoremap ' ''<Esc>:let leavechar="'"<CR>i
-inoremap ` ``<Esc>:let leavechar="`"<CR>i
-inoremap " ""<Esc>:let leavechar='"'<CR>i
+inoremap (( ()<Esc>:let leavechar=")"<CR>i
+inoremap [[ []<Esc>:let leavechar="]"<CR>i
+inoremap {{ {}<Esc>:let leavechar="}"<CR>i
+inoremap '' ''<Esc>:let leavechar="'"<CR>i
+inoremap `` ``<Esc>:let leavechar="`"<CR>i
+inoremap "" ""<Esc>:let leavechar='"'<CR>i
 inoremap <C-j> <Esc>/[)}"'\]`>]<CR>:nohl<CR>a
 
 " Easier navigating between splits
@@ -270,7 +271,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " toggle numbered lines
-nnoremap <leader>t :set nu! relativenumber!<CR>
+nnoremap <leader>tt :set nu! relativenumber!<CR>
 
 " set split orientation
 set splitbelow splitright
@@ -301,9 +302,13 @@ nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gu :diffget //2<CR>
 nnoremap <leader>gs :G<CR>
 
+" Emmet mappings
+let g:user_emmet_expandabbr_key='<Tab>'
+
 " self Definded mappings 
 " Enter date
 nnoremap <leader>dt "ad$<ESC>:r !date<CR>i<BS><ESC>$bbdwd6b$"ap
 
-" Emmet mappings
-let g:user_emmet_expandabbr_key='<Tab>'
+" self Defined abbreviations
+" Quick brown fox
+iabbrev qbf. The quick brown fox jumps over the lazy dog.
