@@ -10,7 +10,6 @@ alias cdanon='cd /media/smb/Anonymous'
 alias cdaudio='cd /media/smb/Audio'
 alias cdbooks='cd /media/smb/Books'
 alias cdsoftware='cd /media/smb/Software'
-alias cdtor='cd /media/smb/Torrents'
 alias cdvideos='cd /media/smb/Videos'
 
 alias mycode='cd $HOME/code'
@@ -21,6 +20,7 @@ alias mydownloads='cd $HOME/Downloads'
 alias mywa='cd $HOME/code/wacevedo76'
 alias mytrain='cd $HOME/code/wacevedo76/training'
 alias cdfullstack='cd $HOME/code/*/fullstack-challenges'
+alias vimwikiw='cd ${HOME}/code/wacevedo76/vimwikiw'
 
 # shell aliases
 alias ..='cd ..'
