@@ -20,7 +20,7 @@ alias mydownloads='cd $HOME/Downloads'
 alias mywa='cd $HOME/code/wacevedo76'
 alias mytrain='cd $HOME/code/wacevedo76/training'
 alias cdfullstack='cd $HOME/code/*/fullstack-challenges'
-alias vimwikiw='cd ${HOME}/code/wacevedo76/vimwikiw'
+alias vimwikiw='cd ${HOME}/code/wacevedo76/vimwiki'
 
 # shell aliases
 alias ..='cd ..'
