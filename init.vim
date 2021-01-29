@@ -49,6 +49,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'thaerkh/vim-indentguides'
   Plug 'vimwiki/vimwiki'
+  Plug 'voldikss/vim-floaterm'
 call plug#end()
 " --------- End Plugged --------------------------------------------------------
 
@@ -289,7 +290,7 @@ nnoremap <leader>ev :vsplit $MYNVIMRC<CR>
 nnoremap <leader>sv :so $MYNVIMRC<CR> 
 
 " fzf
-nnoremap <leader>f :FZF<cr>
+nnoremap <leader>z :FZF<cr>
 nnoremap // :BLines!<CR>
 nnoremap ?? :Rg!<CR>
 
@@ -301,6 +302,10 @@ nnoremap <leader>' viw<ESC>a'<ESC>bi'<ESC>lel
 nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gu :diffget //2<CR>
 nnoremap <leader>gs :G<CR>
+
+" Vim-floaterm
+let g:floaterm_keymap_new = '<Leader>ft'
+let g:floaterm_keymap_toggle = '<Leader>t'
 
 " Emmet mappings
 let g:user_emmet_expandabbr_key='<Tab>'
