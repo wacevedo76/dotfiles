@@ -10,9 +10,10 @@ let mapleader = ','
 let maplocalleader = ',.'
 
 set backspace=indent,eol,start
-set tabstop=2 softtabstop=2 
-set shiftwidth=2 
+set tabstop=2
+set shiftwidth=2
 set expandtab
+set softtabstop=2
 set smartindent
 set hidden
 set noerrorbells
@@ -302,6 +303,7 @@ nnoremap <leader>' viw<ESC>a'<ESC>bi'<ESC>lel
 nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gu :diffget //2<CR>
 nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :Git commit<CR>
 
 " Vim-floaterm
 let g:floaterm_keymap_new = '<Leader>ft'
