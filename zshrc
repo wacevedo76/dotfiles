@@ -27,23 +27,10 @@ bindkey -v
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 # Load Functions
-[[ -f "${HOME}/.zsh_functions" ]] && source "${HOME}/.zsh_functions"
+[[ -f "${HOME}.zsh_functions" ]] && source "${HOME}.zsh_functions"
 
 # Path
-export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/ruby-build/bin:${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}/.local/bin:/usr/bin/python3:./bin:./node_modules/.bin:${PATH}:/usr/local/sbin:${PATH}"
-# Path_string="${HOME}.rbenv/bin"
-# Path_string+=":${HOME}.rbenv/ruby-build/bin"
-# Path_string+=":${HOME}.yarn/bin"
-# Path_string+=":${HOME}.config/yarn/global/node_modules/.bin"
-# Path_string+=":/usr/local/go/bin"
-# Path_string+=":${HOME}.local/bin"
-# Path_string+=":/usr/bin/python3"
-# Path_string+=":${HOME}bin"
-# Path_string+=":${HOME}node_modules/.bin"
-# Path_string+=":/usr/local/sbin"
-# Path_string+="${PATH}"
-# PATH=Path_string
-# export PATH
+export PATH="${HOME}.rbenv/bin:${HOME}.rbenv/ruby-build/bin:${HOME}.yarn/bin:${HOME}.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}.local/bin:/usr/bin/python3:/usr/local/sbin:${PATH}"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
@@ -71,5 +58,5 @@ prompt_dir() {
 
 export MYVIMRC="$HOME/.vim/vimrc"
 export MYNVIMRC="$HOME/.config/nvim/init.vim"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
