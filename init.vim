@@ -49,6 +49,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tkhren/vim-fake'
   Plug 'morhetz/gruvbox'
   Plug 'thaerkh/vim-indentguides'
+  Plug 'mhinz/vim-startify'
   Plug 'vimwiki/vimwiki'
   Plug 'voldikss/vim-floaterm'
 call plug#end()
