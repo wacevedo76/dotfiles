@@ -287,6 +287,11 @@ nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
 nnoremap tm :tabm<Space>
 
+" resize splits
+nnoremap <leader>df :vertical resize +
+nnoremap <leader>fd :vertical resize -
+nnoremap <leader><leader>e <C-w>=<CR>
+
 " open init.vim in new split | reload vimrc changes
 nnoremap <leader>ev :vsplit $MYNVIMRC<CR>
 nnoremap <leader>sv :so $MYNVIMRC<CR> 
