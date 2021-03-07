@@ -299,6 +299,7 @@ nnoremap <leader>sv :so $MYNVIMRC<CR>
 " fzf
 nnoremap <leader>z :FZF<cr>
 nnoremap // :BLines!<CR>
+nnoremap <C-p> :GFiles<CR>
 nnoremap ?? :Rg!<CR>
 
 " quote wrap words
