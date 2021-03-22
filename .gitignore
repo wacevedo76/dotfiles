@@ -1,2 +1,5 @@
 # vim / vim session files
 *.vim
+
+# files labled .local
+**/.local

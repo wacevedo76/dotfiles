@@ -32,7 +32,7 @@ syntax on
 
 " ------- Plugged --------------------------------------------------------------
 if empty(glob('~/.local/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/nvim/site/autoload/plug.vim --create-dirs
+  silent !curl -x localhost:9000 -fLo ~/.local/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYNVIMRC
 endif
