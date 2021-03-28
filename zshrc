@@ -4,8 +4,9 @@
 #   \ V  V | (_| | (_|  __/\ V |  __| (_| | (_)    / /\__ | | | | | | (__
 #    \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/  /___|___|_| |_|_|  \___|
 
+HOME=/home/wacevedo
 
-ZSH=$HOME/.oh-my-zsh
+ZSH=${HOME}/.oh-my-zsh
 
 # Themes
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
@@ -22,15 +23,17 @@ unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
 # Vim like shell controll
 bindkey -v
+export KEYTIMEOUT=1
 
 # Store your own aliases in the ~/.aliases file and load the here.
-[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
 
 # Load Functions
-[[ -f "${HOME}.zsh_functions" ]] && source "${HOME}.zsh_functions"
+[[ -f "${HOME}/.zsh_functions" ]] && source "${HOME}/.zsh_functions"
 
 # Path
-export PATH="${HOME}.rbenv/bin:${HOME}.rbenv/ruby-build/bin:${HOME}.yarn/bin:${HOME}.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}.local/bin:/usr/bin/python3:/usr/local/sbin:${PATH}"
+export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/ruby-build/bin:${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}/.local/bin:/usr/bin/python3:/usr/local/sbin:/usr/bin/kotlinc:${PATH}"
+
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
@@ -46,6 +49,13 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export BUNDLER_EDITOR="atom $@ >/dev/null 2>&1 -a"
 
+# Kotlin dev
+function ktolinr() {
+  echo 'Compliling, pleae wait...'
+  kotlinc $1 -include-runtime -d out.jar
+  java -jar out.jar
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function mkcd {
@@ -56,7 +66,7 @@ prompt_dir() {
   prompt_segment blue black '%2/'
 }
 
-export MYVIMRC="$HOME/.vim/vimrc"
-export MYNVIMRC="$HOME/.config/nvim/init.vim"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
+export MYVIMRC="${HOME}/.vim/vimrc"
+export MYNVIMRC="${HOME}/.config/nvim/init.vim"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
