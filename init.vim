@@ -25,6 +25,7 @@ set nu
 set relativenumber 
 set autoindent
 set cursorline
+set autochdir
 
 filetype plugin on
 syntax enable
@@ -51,7 +52,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'thaerkh/vim-indentguides'
   Plug 'mhinz/vim-startify'
   Plug 'vimwiki/vimwiki'
-  Plug 'voldikss/vim-floaterm'
+  Plug 'Galicarnax/vim-regex-syntax'
 call plug#end()
 " --------- End Plugged --------------------------------------------------------
 
@@ -290,7 +291,11 @@ nnoremap tm :tabm<Space>
 " resize splits
 nnoremap <leader>df :vertical resize +
 nnoremap <leader>fd :vertical resize -
+nnoremap <leader>de :resize +
+nnoremap <leader>dc :resize -
 nnoremap <leader><leader>e <C-w>=<CR>
+
+nnoremap <leader>h :vert help
 
 " open init.vim in new split | reload vimrc changes
 nnoremap <leader>ev :vsplit $MYNVIMRC<CR>
