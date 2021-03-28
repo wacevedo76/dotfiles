@@ -40,7 +40,7 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gd='git diff'
 alias gl='git log'
-alias tig=$HOME/bin/tig
+alias tig=${HOME}/bin/tig
 
 # ruby aliases
 alias brspec='bundle exec rspec -fd'
