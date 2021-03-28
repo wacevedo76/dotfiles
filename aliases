@@ -4,7 +4,19 @@
 #  \ V  V | (_| | (_|  __/\ V |  __| (_| | (_) | | (_| | | | (_| \__ |  __\__ \
 #   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/   \__,_|_|_|\__,_|___/\___|___/
 
-alias dotfiles='cd $HOME/code/*/dotfiles/'
+alias dotfiles='cd ${HOME}/code/*/dotfiles/'
+
+alias mycode='cd ${HOME}/code'
+alias mydocs='cd ${HOME}/Documents'
+alias mybooks='cd ${HOME}/Documents/Books'
+alias mynotes='cd ${HOME}/Documents/Notes'
+alias mydownloads='cd ${HOME}/Downloads'
+alias myman="cd ${HOME}/Documents/Manuals"
+alias mywa='cd ${HOME}/code/wacevedo76'
+alias mytrain='cd ${HOME}/code/wacevedo76/training'
+alias cdfullstack='cd ${HOME}/code/*/fullstack-challenges'
+alias vimwikiw='cd ${HOME}/code/wacevedo76/vimwiki'
+alias cdman='cd ${HOME}/Documents/Manuals'
 
 alias cdanon='cd /media/smb/Anonymous'
 alias cdaudio='cd /media/smb/Audio'
@@ -38,7 +50,7 @@ alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
 # php aliases
-alias composer="$HOME/.local/bin/composer/composer.phar"
+alias composer="${HOME}/.local/bin/composer/composer.phar"
 
 alias bright='xrandr --output LVDS1 --brightness'
 
@@ -47,7 +59,7 @@ alias vim=nvim
 alias v='nvim $(fzf)'
 
 # misc aliases
-alias speedtest=$HOME/.local/bin/speedtest.py
+alias speedtest=${HOME}/.local/bin/speedtest.py
 alias mutt=neomutt
 alias irc=irssi
 alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
