@@ -15,7 +15,7 @@ alias myman="cd ${HOME}/Documents/Manuals"
 alias mywa='cd ${HOME}/code/wacevedo76'
 alias mytrain='cd ${HOME}/code/wacevedo76/training'
 alias cdfullstack='cd ${HOME}/code/*/fullstack-challenges'
-alias vimwikiw='cd ${HOME}/code/wacevedo76/vimwiki'
+alias vimwiki='cd ${HOME}/code/wacevedo76/vimwiki'
 alias cdman='cd ${HOME}/Documents/Manuals'
 
 alias cdanon='cd /media/smb/Anonymous'
