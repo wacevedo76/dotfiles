@@ -20,7 +20,10 @@ alias mydownloads='cd $HOME/Downloads'
 alias mywa='cd $HOME/code/wacevedo76'
 alias mytrain='cd $HOME/code/wacevedo76/training'
 alias cdfullstack='cd $HOME/code/*/fullstack-challenges'
-alias vimwikiw='cd ${HOME}/code/wacevedo76/vimwiki'
+alias vimwiki='cd ${HOME}/code/wacevedo76/vimwiki'
+alias atosdocs='cd /mnt/c/Users/a809593/OneDrive - Atos/Documents'
+alias windocs='cd /mnt/c/Users/a809593/Documents'
+alias windownloads='cd /mnt/c/Users/a809593/Downloads'
 
 # shell aliases
 alias ..='cd ..'
