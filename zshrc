@@ -11,7 +11,7 @@ ZSH=${HOME}/.oh-my-zsh
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="agnoster"
 # ZSH_THEME="michelebologna"
- 
+
 # Useful plugins
 source /home/*/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 plugins=(gitfast common-aliases zsh-syntax-highlighting history-substring-search)
