@@ -22,6 +22,7 @@ unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
 # Vim like shell controll
 bindkey -v
+export KEYTIMEOUT=1
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
@@ -45,6 +46,13 @@ export LC_ALL=en_US.UTF-8
 # export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export EDITOR=vim
 export BUNDLER_EDITOR="atom $@ >/dev/null 2>&1 -a"
+
+# Kotlin dev
+function ktolinr() {
+  echo 'Compliling, pleae wait...'
+  kotlinc $1 -include-runtime -d out.jar
+  java -jar out.jar
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

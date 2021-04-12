@@ -13,3 +13,15 @@ function stopwatch(){
     sleep 0.1
    done
 }
+
+function vman(){
+  if [[ -e ${HOME}/Documents/Manuals/${1} ]] then
+    if [[ -e ${HOME}/Documents/Manuals/${1}/${1}-session ]] then
+      vim -R -S ${HOME}/Documents/Manuals/${1}/${1}-session
+    else
+      echo "File Exists, but vim session doesn't"
+    fi
+  else
+    echo "File does not exits"
+  fi
+}
