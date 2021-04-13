@@ -57,8 +57,8 @@ call plug#end()
 " --------- End Plugged --------------------------------------------------------
 
 " Set theme
-colo gruvbox
-set background=dark
+ colo gruvbox
+ set background=dark
 
 " Highlight search and clear
 set hlsearch
