@@ -52,6 +52,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'thaerkh/vim-indentguides'
   Plug 'mhinz/vim-startify'
   Plug 'vimwiki/vimwiki'
+  Plug 'janko-m/vim-test'
   Plug 'Galicarnax/vim-regex-syntax'
 call plug#end()
 " --------- End Plugged --------------------------------------------------------
@@ -239,6 +240,13 @@ let g:vimwiki_list = [
   \ ]
 "-------------------------------------------------------------------------------
 
+" mappings for vim-test
+"   https://github.com/vim-test/vim-test
+nnoremap <silent> t<C-n> :TestNearest<CR>
+nnoremap <silent> t<C-f> :TestFile<CR>
+nnoremap <silent> t<C-s> :TestSuite<CR>
+nnoremap <silent> t<C-l> :TestLast<CR>
+nnoremap <silent> t<C-g> :TestVisit<CR>
 " Nerd Tree function
 function! ToggleNERDTree()
   NERDTreeToggle
