@@ -25,3 +25,7 @@ function vman(){
     echo "File does not exits"
   fi
 }
+
+function clearvimswap() {
+  rm -rf /home/wacevedo/.config/nvim/swap/*
+}
