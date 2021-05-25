@@ -14,6 +14,7 @@ alias mydownloads='cd ${HOME}/Downloads'
 alias myman="cd ${HOME}/Documents/Manuals"
 alias mywa='cd ${HOME}/code/wacevedo76'
 alias mytrain='cd ${HOME}/code/wacevedo76/training'
+alias mytrainvids='cd ${HOME}/Video/Training/'
 alias cdfullstack='cd ${HOME}/code/*/fullstack-challenges'
 alias cdman='cd ${HOME}/Documents/Manuals'
 
@@ -54,12 +55,12 @@ alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
 # php aliases
 alias composer="${HOME}/.local/bin/composer/composer.phar"
-
 alias bright='xrandr --output LVDS1 --brightness'
 
 # neovim
 alias vim=nvim
 alias v='nvim $(fzf)'
+alias rmswap='rm -rf ~/.config/nvim/swap/*'
 
 # misc aliases
 alias speedtest=${HOME}/.local/bin/speedtest.py
