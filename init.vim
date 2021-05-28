@@ -260,6 +260,9 @@ au BufNewFile * silent! 0r ~/.config/nvim/templates/%:e.tpl
 inoremap jk <ESC>
 vnoremap jk <ESC>
 
+" IndentGuidesToggle
+nnoremap <silent> ig :IndentGuidesToggle<cr>
+
 " auto indent correction
 nnoremap <F7> gg=<C-o><C-o>
 

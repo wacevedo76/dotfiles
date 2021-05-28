@@ -62,6 +62,8 @@ alias vim=nvim
 alias v='nvim $(fzf)'
 alias rmswap='rm -rf ~/.config/nvim/swap/*'
 
+alias sdoc='sudo docker'
+
 # misc aliases
 alias speedtest=${HOME}/.local/bin/speedtest.py
 alias mutt=neomutt
