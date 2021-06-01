@@ -47,6 +47,8 @@ alias tig=${HOME}/bin/tig
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
 alias vimwiki='cd ${HOME}/code/wacevedo76/vimwiki'
+alias vwtig='cd ${HOME}/code/wacevedo76/vimwiki && tig'
+alias vwp='cd ${HOME}/code/wacevedo76/vimwiki && git push origin main'
 
 # ruby aliases
 alias brspec='bundle exec rspec -fd'
