@@ -67,7 +67,6 @@ alias rmswap='rm -rf ~/.config/nvim/swap/*'
 alias sdoc='sudo docker'
 
 # misc aliases
-alias speedtest=${HOME}/.local/bin/speedtest.py
 alias mutt=neomutt
 alias irc=irssi
 alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
