@@ -14,7 +14,7 @@ alias mydownloads='cd ${HOME}/Downloads'
 alias myman="cd ${HOME}/Documents/Manuals"
 alias mywa='cd ${HOME}/code/wacevedo76'
 alias mytrain='cd ${HOME}/code/wacevedo76/training'
-alias mytrainvids='cd ${HOME}/Video/Training/'
+alias mytrainvids='cd ${HOME}/Videos/Training/'
 alias cdfullstack='cd ${HOME}/code/*/fullstack-challenges'
 alias cdman='cd ${HOME}/Documents/Manuals'
 
@@ -23,6 +23,7 @@ alias cdaudio='cd /media/smb/Audio'
 alias cdbooks='cd /media/smb/Books'
 alias cdsoftware='cd /media/smb/Software'
 alias cdvideos='cd /media/smb/Videos'
+alias cdtrainvids='cd /media/smb/Videos/Training'
 
 # shell aliases
 alias ..='cd ..'
@@ -70,3 +71,7 @@ alias sdoc='sudo docker'
 alias mutt=neomutt
 alias irc=irssi
 alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
+
+
+# speed test
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"

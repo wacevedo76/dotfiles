@@ -13,8 +13,11 @@
 (setq inhibit-startup-message t)
 (setq package-enable-at-startup nil)
 
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://stable.melpa.org/packages/") t)
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -34,7 +37,11 @@
 ;;Org mode configuration
 (use-package org
   :ensure t)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+;; Org mode extras
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 ;; Org mode key bindings
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -51,10 +58,36 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(try zenburn-theme use-package notes-mode evil)))
+ '(package-selected-packages
+   '(iv ivy ace-window try zenburn-theme use-package notes-mode evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+
+;; Buffer packages
+(setq indo-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+(defalias 'list-buffers 'ibuffer)
+
+;; Window packages
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0)))))))
+(use-package ivy
+  :ensure t
+  :diminish (ivy-mode)
+  :bind(("C-x b" . ivy-switch-buffer))
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-display-style 'fancy))
