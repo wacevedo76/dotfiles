@@ -56,7 +56,9 @@
   (global-set-key (kbd "C-c a") 'org-agenda)
   (global-set-key (kbd "C-c c") 'org-capture)
   #+end_src
+
 * FONTS
+
 * THEME
   #+begin_src emacs-lisp
   (use-package doom-themes
@@ -65,7 +67,6 @@
       doom-themes-enable-italic t)
   (load-theme 'doom-one t)
   #+end_src
-
 
 * MISC PACKAGES
   #+begin_src emacs-lisp
@@ -77,3 +78,8 @@
     :config (which-key-mode))
   #+end_src
   
+* CUSTOM KEYBINDINGS
+  #+begin_src emacs-lisp
+  (global-set-key (kbd "C-c f") 'find-name-dired)
+  (global-set-key (kbd "C-c F") 'find-dired)
+  #+end_src
