@@ -1,0 +1,79 @@
+#+TITLE: Will's Emacs Config
+#+AUTHOR: Wiliam Acevedo
+
+* PACKAGE MANAGEMENT
+** Setup package.el to work with MELPA.
+  #+begin_src emacs-lisp
+  (require 'package)
+  (add-to-list 'package-archives
+               '("melpa" . "https://melpa.org/packages/"))
+  (package-initialize)
+  #+end_src
+  
+** Installing use-package
+  #+begin_src emacs-lisp
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
+  #+end_src
+  
+* Global Settings
+  #+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (toggle-scroll-bar -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (setq visible-bell t)
+  (setq display-line-numbers-mode 1)
+  (setq inhibit-startup-message t)
+  (setq package-enable-at-startup nil)
+  #+end_src
+
+* Evil MODE
+  #+begin_src emacs-lisp
+  (use-package evil
+    :ensure t
+    :init
+    (setq evil-want-integration t)
+    (setq evil-want-keybinding nil)
+    (setq evil-vsplit-window-right t)
+    (setq evil-split-window-below t)
+    (evil-mode))
+  (use-package evil-collection
+    :after evil
+    :ensure t
+    :config
+  (evil-collection-init))
+  #+end_src
+ 
+* ORG MODE
+  #+begin_src emacs-lisp
+  (use-package org-bullets
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (global-set-key (kbd "C-c l") 'org-store-link)
+  (global-set-key (kbd "C-c a") 'org-agenda)
+  (global-set-key (kbd "C-c c") 'org-capture)
+  #+end_src
+* FONTS
+* THEME
+  #+begin_src emacs-lisp
+  (use-package doom-themes
+    :ensure t)
+  (setq doom-themes-enable-bold t
+      doom-themes-enable-italic t)
+  (load-theme 'doom-one t)
+  #+end_src
+
+
+* MISC PACKAGES
+  #+begin_src emacs-lisp
+  (use-package try
+    :ensure t)
+
+  (use-package which-key
+    :ensure t
+    :config (which-key-mode))
+  #+end_src
+  
