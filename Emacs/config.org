@@ -57,6 +57,11 @@
   (global-set-key (kbd "C-c c") 'org-capture)
   #+end_src
 
+* Web Browser
+  #+begin_src emacs-lisp
+  (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-application-framework/")
+  (require 'eaf)
+  #+end_src
 * FONTS
 
 * THEME
