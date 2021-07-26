@@ -32,7 +32,7 @@ export KEYTIMEOUT=1
 [[ -f "${HOME}/.zsh_functions" ]] && source "${HOME}/.zsh_functions"
 
 # Path
-export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/ruby-build/bin:${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}/.local/bin:/usr/bin/python3:/usr/local/sbin:/usr/bin/kotlinc:${PATH}"
+export PATH="/usr/local/lib/nodejs/node-v14.17.3-linux-x64/bin:${HOME}/.rbenv/bin:${HOME}/.rbenv/ruby-build/bin:${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}/.local/bin:/usr/bin/python3:/usr/local/sbin:/usr/bin/kotlinc:${PATH}"
 
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
