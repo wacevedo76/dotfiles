@@ -15,17 +15,21 @@ function stopwatch(){
 }
 
 function vman(){
-  if [[ -e ${HOME}/Documents/Manuals/${1} ]] then
-    if [[ -e ${HOME}/Documents/Manuals/${1}/${1}-session ]] then
+  if [[ -e ${HOME}/Documents/Manuals/${1} ]]; then
+    if [[ -e ${HOME}/Documents/Manuals/${1}/${1}-session ]]; then
       vim -R -S ${HOME}/Documents/Manuals/${1}/${1}-session
     else
-      echo "File Exists, but vim session doesn't"
+      echo "File Exists, but it's vim session doesn't"
     fi
   else
-    echo "File does not exits"
+    echo "File does not exist"
   fi
 }
 
 function clearvimswap() {
   rm -rf /home/wacevedo/.config/nvim/swap/*
+}
+
+function mkcd {
+  command mkdir -p $1 && cd $1
 }
