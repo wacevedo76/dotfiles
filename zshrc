@@ -12,7 +12,17 @@ ZSH=${HOME}/.oh-my-zsh
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 ZSH_THEME="agnoster"
 # ZSH_THEME="michelebologna"
- 
+
+# Prompt
+
+prompt_dir() {
+  prompt_segment blue black '%2/'
+}
+
+# Encoding stuff for the terminal
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Useful plugins
 source /home/*/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 plugins=(gitfast common-aliases zsh-syntax-highlighting history-substring-search)
@@ -35,19 +45,15 @@ export KEYTIMEOUT=1
 export PATH="/usr/local/lib/nodejs/node-v14.17.3-linux-x64/bin:${HOME}/.rbenv/bin:${HOME}/.rbenv/ruby-build/bin:${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}/.local/bin:/usr/bin/python3:/usr/local/sbin:/usr/bin/kotlinc:${PATH}"
 
 
-# Rails and Ruby uses the local `bin` folder to store binstubs.
-# So instead of running `bin/rails` like the doc says, just run `rails`
-# Same for `./node_modules/.bin` and nodejs
+# Rails and Ruby Dev
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
-
-# Encoding stuff for the terminal
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-#
 # export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export EDITOR=vim
 export BUNDLER_EDITOR="atom $@ >/dev/null 2>&1 -a"
+
+# Python dev
+source virtualenvwrapper.sh
 
 # Kotlin dev
 function ktolinr() {
@@ -58,14 +64,9 @@ function ktolinr() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-function mkcd {
-  command mkdir -p $1 && cd $1
-}
 
-prompt_dir() {
-  prompt_segment blue black '%2/'
-}
 
+# Vim / Neovim stuff
 export MYVIMRC="${HOME}/.vim/vimrc"
 export MYNVIMRC="${HOME}/.config/nvim/init.vim"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
