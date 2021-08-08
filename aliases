@@ -61,7 +61,7 @@ alias composer="${HOME}/.local/bin/composer/composer.phar"
 alias bright='xrandr --output LVDS1 --brightness'
 
 # neovim
-alias vim=/opt/squashfs-root/usr/bin/nvim
+alias vim=/usr/local/bin/nvim
 alias v='nvim $(fzf)'
 alias rmswap='rm -rf ~/.config/nvim/swap/*'
 
