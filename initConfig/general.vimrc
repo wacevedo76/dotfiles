@@ -15,9 +15,10 @@ set ruler
 set nowrap 
 set linebreak 
 set nu 
-set relativenumber 
+set rnu
 set autoindent
 set cursorline
+set cursorcolumn
 set autochdir
 
 filetype plugin on

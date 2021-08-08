@@ -5,8 +5,9 @@
 "   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/  |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 "
 
-source $HOME/.config/nvim/general.vimrc
-source $HOME/.config/nvim/plugins.vimrc
-source $HOME/.config/nvim/theme.vimrc
-source $HOME/.config/nvim/misc.vimrc
-source $HOME/.config/nvim/remaps.vimrc
+source $HOME/.config/nvim/initConfig/general.vimrc
+source $HOME/.config/nvim/initConfig/plugins.vimrc
+source $HOME/.config/nvim/initConfig/lua.vimrc
+source $HOME/.config/nvim/initConfig/theme.vimrc
+source $HOME/.config/nvim/initConfig/misc.vimrc
+source $HOME/.config/nvim/initConfig/remaps.vimrc

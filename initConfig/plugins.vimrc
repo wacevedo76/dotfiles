@@ -10,8 +10,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'preservim/nerdtree'
   Plug 'mattn/emmet-vim'
+  " Plug 'ryanoasis/vim-devicons'
   Plug 'prettier/vim-prettier'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/completion-nvim'
+  Plug 'nvim-lua/diagnostic-nvim'
   Plug 'anott03/nvim-lspinstall'
   Plug 'ray-x/lsp_signature.nvim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install -all' }
@@ -28,7 +31,5 @@ call plug#end()
 
 " lua require("./lua/lsp-config.lua")
 
-lua << EOF
-  require'lspconfig'.pyright.setup{}
-  require'lspconfig'.tsserver.setup{}
-EOF
+set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']

@@ -1,8 +1,14 @@
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " Nerd Tree function
 function! ToggleNERDTree()
   NERDTreeToggle
   silent NERDTreeMirror
 endfunction
+
+nnoremap <leader>/ :NERDTreeToggle<CR>
 
 " git-fugitive mappings
 nnoremap <leader>gh :diffget //3<CR>
@@ -95,4 +101,6 @@ nnoremap <leader>dt "ad$<ESC>:r !date<CR>i<BS><ESC>$bbdwd6b$"ap
 
 " self Defined abbreviations
 " Quick brown fox
+"
 iabbrev qbf. The quick brown fox jumps over the lazy dog.
+iabbrev nlb --------------------------------------------------------------------------------
