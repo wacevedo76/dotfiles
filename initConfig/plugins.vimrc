@@ -29,7 +29,5 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
-" lua require("./lua/lsp-config.lua")
-
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']

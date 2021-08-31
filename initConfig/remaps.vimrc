@@ -8,7 +8,10 @@ function! ToggleNERDTree()
   silent NERDTreeMirror
 endfunction
 
-nnoremap <leader>/ :NERDTreeToggle<CR>
+nnoremap <leader><Tab> :NERDTreeToggle<CR>
+
+" Search for visually highlighted word
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " git-fugitive mappings
 nnoremap <leader>gh :diffget //3<CR>
@@ -88,14 +91,16 @@ nnoremap <leader>h :vert help
 
 " open init.vim in new split | reload vimrc changes
 nnoremap <leader>ev :vsplit $MYNVIMRC<CR>
-nnoremap <leader>sv :so $MYNVIMRC<CR> 
+nnoremap <leader>sv :so $MYNVIMRC<CR>
 
+" open bufer list
+nnoremap <leader>bb :buffers<CR>
 
 " quote wrap words
 nnoremap <leader>" viw<ESC>a"<ESC>bi"<ESC>lel
 nnoremap <leader>' viw<ESC>a'<ESC>bi'<ESC>lel
 
-" self Definded mappings 
+" self Definded mappings
 " Enter date
 nnoremap <leader>dt "ad$<ESC>:r !date<CR>i<BS><ESC>$bbdwd6b$"ap
 

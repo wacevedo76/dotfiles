@@ -6,6 +6,9 @@ let g:vimwiki_list = [
 " swp directory
 set directory=$HOME/.config/nvim/swap//
 
+" Auto center text when entering insert mode
+autocmd InsertEnter * norm zz
+
 " Highlight search and clear
 set hlsearch
 nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
@@ -28,3 +31,6 @@ augroup END
 
 " templates
 au BufNewFile * silent! 0r ~/.config/nvim/templates/%:e.tpl
+
+" Remove trailing white space when saving
+autocmd BufWritePre * :%s/\s\+$//e

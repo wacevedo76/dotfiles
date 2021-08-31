@@ -1,19 +1,23 @@
 # ----------------- Timer functions - Bash Script ------------------------------
+# set a countdown timer
 function countdown(){
-   date1=$((`date +%s` + $1 * 60)); 
-   while [ "$date1" -ge `date +%s` ]; do 
+   date1=$((`date +%s` + $1 * 60));
+   while [ "$date1" -ge `date +%s` ]; do
      echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
      sleep 0.1
    done
 }
+
+# set a stopwatch
 function stopwatch(){
-  date1=`date +%s`; 
-   while true; do 
-    echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; 
+  date1=`date +%s`;
+   while true; do
+    echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
     sleep 0.1
    done
 }
 
+# opens saved manpages via session files which contain folds
 function vman(){
   if [[ -e ${HOME}/Documents/Manuals/${1} ]]; then
     if [[ -e ${HOME}/Documents/Manuals/${1}/${1}-session ]]; then
@@ -26,10 +30,44 @@ function vman(){
   fi
 }
 
+# removes all vim swapfiles from swap directory
 function clearvimswap() {
   rm -rf /home/wacevedo/.config/nvim/swap/*
 }
 
+# creates directory and then enters directory
 function mkcd {
   command mkdir -p $1 && cd $1
+}
+
+function tsn() {
+  local SESSION=${1}
+  local FDIR=${2}
+
+  if [[ ${1} = 'vw' ]]; then
+    tmux new-session -d -s ${SESSION} -n ${SESSION}
+    tmux select-window -t ${SESSION}:1
+    tmux send-keys 'vw' C-m
+    tmux attach -t ${SESSION}
+  elif [[ ${1} = 'django' ]]; then
+
+    local FPATH=${HOME}code/wacevedo76/training/python/scrap/
+
+    if [[ -d ${FPATH}${FDIR} ]]; then
+      cd ${FPATH}${FDIR}
+    fi
+
+    tmux new-session -d -s ${SESSION} -n ${SESSION}
+    tmux new-window -t ${SESSION}:2 -n "Code"
+    tmux new-window -t ${SESSION}:3 -n "SHELL"
+    tmux new-window -t ${SESSION}:4 -n "Vimwiki"
+    tmux select-window -t ${SESSION}:4
+    tmux send-keys 'vw' Enter
+    tmux select-window -t ${SESSION}:2
+    tmux send-keys 'nvim' Enter
+    tmux select-window -t ${SESSION}:1
+    tmux attach -t ${SESSION}
+  else
+    echo "No such defined argument"
+  fi
 }

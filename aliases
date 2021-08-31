@@ -9,6 +9,7 @@ alias dotfiles='cd ${HOME}/code/*/dotfiles/'
 alias mycode='cd ${HOME}/code'
 alias mydocs='cd ${HOME}/Documents'
 alias mybooks='cd ${HOME}/Documents/Books'
+alias myitbooks='cd ${HOME}/Documents/Books/IT'
 alias mynotes='cd ${HOME}/Documents/Notes'
 alias mydownloads='cd ${HOME}/Downloads'
 alias myman="cd ${HOME}/Documents/Manuals"
@@ -64,6 +65,7 @@ alias bright='xrandr --output LVDS1 --brightness'
 alias vim=/usr/local/bin/nvim
 alias v='nvim $(fzf)'
 alias rmswap='rm -rf ~/.config/nvim/swap/*'
+alias virc='vim ${HOME}/.config/nvim/init.vim'
 
 alias sdoc='sudo docker'
 
@@ -75,3 +77,8 @@ alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
 
 # speed test
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+
+alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
+
+# python Django Unit tests
+alias rat='clear; python manage.py test'

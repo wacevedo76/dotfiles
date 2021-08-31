@@ -1,5 +1,5 @@
 "set Leader key
-let mapleader = ','
+let mapleader = " "
 let maplocalleader = ',.'
 
 set backspace=indent,eol,start
@@ -11,10 +11,10 @@ set smartindent
 set hidden
 set noerrorbells
 set incsearch
-set ruler 
-set nowrap 
-set linebreak 
-set nu 
+set ruler
+set nowrap
+set linebreak
+set nu
 set rnu
 set autoindent
 set cursorline
