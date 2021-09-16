@@ -1,3 +1,7 @@
+" yank to system clipboard
+inoremap <C-c> "+y
+vnoremap <C-c> "+y
+
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -26,7 +30,8 @@ nnoremap <C-p> :GFiles<CR>
 nnoremap ?? :Rg!<CR>
 
 " Emmet mappings
-let g:user_emmet_expandabbr_key='<Leader><Tab>'
+let g:user_emmet_expandabbr_key=',<Tab>'
+let g:user_emmet_togglecomment_key=',t'
 
 " Vim-floaterm
 let g:floaterm_keymap_new = '<Leader>ft'
