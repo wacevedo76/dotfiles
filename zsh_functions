@@ -42,31 +42,34 @@ function mkcd {
 
 function tsn() {
   local SESSION=${1}
-  local FDIR=${2}
+  local PROJECTDIR=${2}
+  local FPATH=${HOME}code/wacevedo76/training/python/scrap/
 
-  if [[ ${1} = 'vw' ]]; then
-    tmux new-session -d -s ${SESSION} -n ${SESSION}
-    tmux select-window -t ${SESSION}:1
-    tmux send-keys 'vw' C-m
-    tmux attach -t ${SESSION}
-  elif [[ ${1} = 'django' ]]; then
+  if [[ ${SESSION} = 'django' ]]; then
 
-    local FPATH=${HOME}code/wacevedo76/training/python/scrap/
-
-    if [[ -d ${FPATH}${FDIR} ]]; then
-      cd ${FPATH}${FDIR}
+    if [[ -d ${FPATH}${PROJECTDIR} ]]; then
+      cd ${FPATH}${PROJECTDIR}
     fi
 
     tmux new-session -d -s ${SESSION} -n ${SESSION}
+    tmux send-keys "workon ${PROJECTDIR}" Enter
+    tmux send-keys "rsrvr" Enter
     tmux new-window -t ${SESSION}:2 -n "Code"
+    tmux send-keys "workon ${PROJECTDIR}" Enter
     tmux new-window -t ${SESSION}:3 -n "SHELL"
+    tmux send-keys "workon ${PROJECTDIR}" Enter
     tmux new-window -t ${SESSION}:4 -n "Vimwiki"
     tmux select-window -t ${SESSION}:4
     tmux send-keys 'vw' Enter
     tmux select-window -t ${SESSION}:2
     tmux send-keys 'nvim' Enter
     tmux select-window -t ${SESSION}:1
-    tmux attach -t ${SESSION}
+    tmux attach -t ${SESSION}:2
+  elif [[ ${SESSION} = 'itbooks' ]]; then
+    cd ${HOME}/Documents/Books/IT/programming/Python
+    tmux new-session -d -s ${SESSION} -n ${SESSION}
+    tmux send-keys "ranger" Enter
+    tmux send-keys "kkkkkkkkkkkk"
   else
     echo "No such defined argument"
   fi
