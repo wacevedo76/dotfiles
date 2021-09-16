@@ -1,6 +1,6 @@
 "set Leader key
 let mapleader = " "
-let maplocalleader = ',.'
+let maplocalleader = ','
 
 set backspace=indent,eol,start
 set tabstop=2
