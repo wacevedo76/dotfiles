@@ -27,6 +27,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'janko-m/vim-test'
   Plug 'Galicarnax/vim-regex-syntax'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'ap/vim-css-color'
 call plug#end()
 
 set completeopt=menuone,noinsert,noselect
