@@ -58,6 +58,9 @@ function tsn() {
     tmux send-keys "workon ${PROJECTDIR}" Enter
     tmux new-window -t ${SESSION}:3 -n "SHELL"
     tmux send-keys "workon ${PROJECTDIR}" Enter
+    tmux send-keys "alias rft='clear; python functional_tests.py'" Enter
+    tmux send-keys "alias pman='clear; python manage.py'" Enter
+    tmux send-keys "alias rut='pman test'" Enter
     tmux new-window -t ${SESSION}:4 -n "Vimwiki"
     tmux select-window -t ${SESSION}:4
     tmux send-keys 'vw' Enter
