@@ -63,6 +63,7 @@ inoremap {{ {}<Esc>:let leavechar="}"<CR>i
 inoremap '' ''<Esc>:let leavechar="'"<CR>i
 inoremap `` ``<Esc>:let leavechar="`"<CR>i
 inoremap "" ""<Esc>:let leavechar='"'<CR>i
+inoremap 3" """"""<Esc>hhi
 inoremap <C-j> <Esc>/[)}"'\]`>]<CR>:nohl<CR>a
 
 " Easier navigating between splits
@@ -79,6 +80,7 @@ set splitbelow splitright
 
 " tabs remaps
 nnoremap tn :tabnew<Space>
+nnoremap te :tabe<Space>
 nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap th :tabfirst<CR>
