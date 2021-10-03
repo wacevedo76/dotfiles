@@ -64,6 +64,8 @@ alias bright='xrandr --output LVDS1 --brightness'
 # neovim
 alias vim=/usr/local/bin/nvim
 alias v='nvim $(fzf)'
+alias lswap='ll ~/.config/nvim/swap'
+alias gswap='cd ~/.config/nvim/swap'
 alias rmswap='rm -rf ~/.config/nvim/swap/*'
 alias virc='vim ${HOME}/.config/nvim/init.vim'
 
@@ -75,7 +77,6 @@ alias irc=irssi
 alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
 alias ema='extramonitor.sh attach'
 alias emd='extramonitor.sh detach'
-
 
 # speed test
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
