@@ -40,6 +40,15 @@ function mkcd {
   command mkdir -p $1 && cd $1
 }
 
+# Enter training subdirectory
+function train() {
+  if [[ -d ${HOME}code/wacevedo76/training/${1} ]]; then
+    cd ${HOME}code/wacevedo76/training/${1}
+  else
+    echo "That directory doesn't exists."
+  fi
+}
+
 function tsn() {
   local SESSION=${1}
   local PROJECTDIR=${2}
