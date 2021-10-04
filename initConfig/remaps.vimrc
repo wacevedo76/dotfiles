@@ -33,10 +33,6 @@ nnoremap ?? :Rg!<CR>
 let g:user_emmet_expandabbr_key=',<Tab>'
 let g:user_emmet_togglecomment_key=',t'
 
-" Vim-floaterm
-let g:floaterm_keymap_new = '<Leader>ft'
-let g:floaterm_keymap_toggle = '<Leader>t'
-
 " mappings for vim-test
 "   https://github.com/vim-test/vim-test
 nnoremap <silent> t<C-n> :TestNearest<CR>
@@ -49,7 +45,7 @@ nnoremap <silent> t<C-g> :TestVisit<CR>
 inoremap jk <ESC>
 vnoremap jk <ESC>
 
-" IndentGuidesToggle
+" Indent Guides Toggle
 nnoremap <silent> ig :IndentGuidesToggle<cr>
 
 " auto indent correction
@@ -94,6 +90,7 @@ nnoremap <leader>de :resize +
 nnoremap <leader>dc :resize -
 nnoremap <leader><leader>e <C-w>=<CR>
 
+" Place Helpfile on right side of window
 nnoremap <leader>h :vert help
 
 " open init.vim in new split | reload vimrc changes
