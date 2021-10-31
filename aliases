@@ -33,7 +33,7 @@ alias e='exa --color=always'
 alias rless='less -r'
 
 # tmux aliases
-alias t='tmux ls'
+alias t='clear; tmux ls'
 alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'

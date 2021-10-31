@@ -1,3 +1,4 @@
 " Set theme
- colo gruvbox
- set background=dark
+set termguicolors
+set background=dark
+colo gruvbox

@@ -68,6 +68,17 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" resize splits
+nnoremap <leader>df :vertical resize +
+nnoremap <leader>fd :vertical resize -
+nnoremap <leader>de :resize +
+nnoremap <leader>dc :resize -
+nnoremap <leader><leader>e <C-w>=<CR>
+
+" Shortcut split opening
+nnoremap <leader>h :split<space>
+nnoremap <leader>v :vsplit<space>
+
 " toggle numbered lines
 nnoremap <leader>tt :set nu! relativenumber!<CR>
 
@@ -83,15 +94,8 @@ nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
 nnoremap tm :tabm<Space>
 
-" resize splits
-nnoremap <leader>df :vertical resize +
-nnoremap <leader>fd :vertical resize -
-nnoremap <leader>de :resize +
-nnoremap <leader>dc :resize -
-nnoremap <leader><leader>e <C-w>=<CR>
-
 " Place Helpfile on right side of window
-nnoremap <leader>h :vert help
+" nnoremap <leader>h :vert help
 
 " open init.vim in new split | reload vimrc changes
 nnoremap <leader>ev :vsplit $MYNVIMRC<CR>
