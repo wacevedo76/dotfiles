@@ -1,3 +1,5 @@
+" Terminal Mode remaps
+nnoremap <leader>t :terminal<cr>
 " yank to system clipboard
 inoremap <C-c> "+y
 vnoremap <C-c> "+y
@@ -44,6 +46,7 @@ nnoremap <silent> t<C-g> :TestVisit<CR>
 " remap esc
 inoremap jk <ESC>
 vnoremap jk <ESC>
+tnoremap jk <C-\><C-n>
 
 " Indent Guides Toggle
 nnoremap <silent> ig :IndentGuidesToggle<cr>

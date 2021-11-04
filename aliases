@@ -39,11 +39,11 @@ alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
 
 # git aliases
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit -m'
-alias gd='git diff'
-alias gl='git log'
+alias gs='clear; git status'
+alias ga='clear; git add'
+alias gc='clear; git commit -m'
+alias gd='clear; git diff'
+alias gl='clear; git log'
 alias tig=${HOME}/bin/tig
 
 # vimwiki aliases
