@@ -1,20 +1,22 @@
 # ----------------- Timer functions - Bash Script ------------------------------
 # set a countdown timer
 function countdown(){
-   date1=$((`date +%s` + $1 * 60));
+   local date1=$((`date +%s` + $1 * 60));
    while [ "$date1" -ge `date +%s` ]; do
      echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
      sleep 0.1
    done
+   return 0
 }
 
 # set a stopwatch
 function stopwatch(){
-  date1=`date +%s`;
+  local date1=`date +%s`;
    while true; do
     echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
     sleep 0.1
    done
+   return 0
 }
 
 # opens saved manpages via session files which contain folds
@@ -22,22 +24,27 @@ function vman(){
   if [[ -e ${HOME}/Documents/Manuals/${1} ]]; then
     if [[ -e ${HOME}/Documents/Manuals/${1}/${1}-session ]]; then
       vim -R -S ${HOME}/Documents/Manuals/${1}/${1}-session
+      return 0
     else
       echo "File Exists, but it's vim session doesn't"
+      return 1
     fi
   else
     echo "File does not exist"
+    return 1
   fi
 }
 
 # removes all vim swapfiles from swap directory
 function clearvimswap() {
   rm -rf /home/wacevedo/.config/nvim/swap/*
+  return 0
 }
 
 # creates directory and then enters directory
 function mkcd {
   command mkdir -p $1 && cd $1
+  return 0
 }
 
 # Enter training subdirectory
@@ -46,7 +53,9 @@ function train() {
     cd ${HOME}code/wacevedo76/training/${1}
   else
     echo "That directory doesn't exists."
+    return 1
   fi
+  return 0
 }
 
 function tsn() {
@@ -77,12 +86,15 @@ function tsn() {
     tmux send-keys 'nvim' Enter
     tmux select-window -t ${SESSION}:1
     tmux attach -t ${SESSION}:2
+    return 0
   elif [[ ${SESSION} = 'itbooks' ]]; then
     cd ${HOME}/Documents/Books/IT/programming/Python
     tmux new-session -d -s ${SESSION} -n ${SESSION}
     tmux send-keys "ranger" Enter
     tmux send-keys "kkkkkkkkkkkk"
+    return 0
   else
     echo "No such defined argument"
+    return 1
   fi
 }

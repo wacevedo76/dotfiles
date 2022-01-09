@@ -10,10 +10,10 @@ export LC_ALL=en_US.UTF-8
 
 # Vim / Neovim stuff
 export MYNVIMRC="${HOME}.config/nvim/init.vim"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME}" ] && printf %s "${HOME}.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME}" ] && printf %s "${HOME}.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 
 # Path
-export PATH="/usr/local/lib/nodejs/node-v14.17.3-linux-x64/bin:${HOME}.rbenv/bin:${HOME}.rbenv/ruby-build/bin:${HOME}.yarn/bin:${HOME}.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}.local/bin:/usr/bin/python3:/usr/local/sbin:/usr/bin/kotlinc:${PATH}"
+export PATH="${HOME}.rbenv/bin:${HOME}.rbenv/ruby-build/bin:${HOME}.yarn/bin:${HOME}.config/yarn/global/node_modules/.bin:/usr/local/go/bin:${HOME}.local/bin:/usr/bin/python3:/usr/local/sbin:/usr/bin/kotlinc:${PATH}"
 
 ZSH=${HOME}.oh-my-zsh
 
@@ -52,8 +52,10 @@ export EDITOR=vim
 export BUNDLER_EDITOR="atom $@ >/dev/null 2>&1 -a"
 
 # Python dev
-source virtualenvwrapper.sh
+export WORKON_HOME=${HOME}.virtualenvs
+export VIRTUALENVWRAPPER_SCRIPT=${HOME}.local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+source ${HOME}.local/bin/virtualenvwrapper.sh
 #
 # Kotlin dev
 function ktolinr() {
@@ -65,4 +67,5 @@ function ktolinr() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # load nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
