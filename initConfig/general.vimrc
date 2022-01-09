@@ -3,10 +3,13 @@ let mapleader = " "
 let maplocalleader = ','
 
 set backspace=indent,eol,start
+set clipboard = "unnamedplus"
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
+set signcolumn=yes:1
+set list
 set smartindent
 set hidden
 set noerrorbells
@@ -20,6 +23,7 @@ set autoindent
 set cursorline
 set cursorcolumn
 set autochdir
+set updatetime=300
 
 filetype plugin on
 syntax enable
