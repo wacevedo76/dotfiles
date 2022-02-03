@@ -64,9 +64,9 @@ alias bright='xrandr --output LVDS1 --brightness'
 # neovim
 alias vim=/usr/local/bin/nvim
 alias v='nvim $(fzf)'
-alias lswap='ll ~/.config/nvim/swap'
-alias gswap='cd ~/.config/nvim/swap'
-alias rmswap='rm -rf ~/.config/nvim/swap/*'
+alias lswap='ll ~/.local/share/nvim/swap'
+alias gswap='cd ~/.local/share/nvim/swap'
+alias rmswap='rm -rf ~/.local/share/nvim/swap/*'
 alias virc='vim ${HOME}/.config/nvim/init.vim'
 
 alias sdoc='sudo docker'
@@ -87,3 +87,5 @@ alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
 alias rat='clear; python manage.py test'
 alias rsrvr='clear; python manage.py runserver'
 
+alias wrtomr='nmcli c down willsRouter&& nmcli c up Matka_Rulez'
+alias mrtowr='nmcli c down Matka_Rulez && nmcli c up willsRouter'

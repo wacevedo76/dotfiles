@@ -11,8 +11,8 @@ nnoremap <leader>Q :bufdo bdelete<cr>
 nnoremap <leader>X :!xdg-open %<cr><cr>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Nerd Tree function
 function! ToggleNERDTree()
@@ -130,6 +130,14 @@ nnoremap <leader>sv :so $MYNVIMRC<cr>
 
 " open bufer list
 nnoremap <leader>bb :buffers<cr>
+
+" UltiSnippets settings
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " quote wrap words
 nnoremap <leader>" viw<ESC>a"<ESC>bi"<ESC>lel
