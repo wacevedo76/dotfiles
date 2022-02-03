@@ -86,6 +86,3 @@ alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
 # python Django Unit tests
 alias rat='clear; python manage.py test'
 alias rsrvr='clear; python manage.py runserver'
-
-alias wrtomr='nmcli c down willsRouter&& nmcli c up Matka_Rulez'
-alias mrtowr='nmcli c down Matka_Rulez && nmcli c up willsRouter'
