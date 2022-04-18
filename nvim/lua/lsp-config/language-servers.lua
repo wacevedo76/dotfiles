@@ -29,9 +29,12 @@ local on_attach = function(client, bufnr)
 end
 
 local servers = {
+  "eslint",
   "bashls",
   "pyright",
   "tsserver",
+  "dockerls",
+  "yamlls",
   "emmet_ls",
   "sumneko_lua",
   "solargraph"

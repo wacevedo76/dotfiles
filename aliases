@@ -4,8 +4,10 @@
 #  \ V  V | (_| | (_|  __/\ V |  __| (_| | (_) | | (_| | | | (_| \__ |  __\__ \
 #   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/   \__,_|_|_|\__,_|___/\___|___/
 
+# Dotfiles alias
 alias dotfiles='cd ${HOME}/code/*/dotfiles/'
 
+# Common Local file aliases
 alias mycode='cd ${HOME}/code'
 alias mydocs='cd ${HOME}/Documents'
 alias mybooks='cd ${HOME}/Documents/Books'
@@ -19,12 +21,16 @@ alias mytrainvids='cd ${HOME}/Videos/Training/'
 alias myfullstack='cd ${HOME}/code/*/fullstack-challenges'
 alias myman='cd ${HOME}/Documents/Manuals'
 
+# Common Shared directories
 alias smbanon='cd /media/smb/Anonymous'
 alias smbaudio='cd /media/smb/Audio'
 alias smbbooks='cd /media/smb/Books'
 alias smbsoftware='cd /media/smb/Software'
-alias smbvideos='cd /media/smb/Videos'
-alias smbtrainvids='cd /media/smb/Videos/Training'
+alias smbvids='cd /media/smb/Videos'
+alias smbvidstr='cd /media/smb/Videos/Training'
+alias smbvidstrytdevops='/media/smb/Videos/Training/Youtube/IT/DevOps'
+alias smbvidstrytpro='/media/smb/Videos/Training/Youtube/IT/Programming'
+alias smbvidstrytnet='/media/smb/Videos/Training/Youtube/IT/Networking'
 
 # shell aliases
 alias ..='cd ..'
@@ -38,30 +44,7 @@ alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
 
-# git aliases
-alias gs='clear; git status'
-alias ga='clear; git add'
-alias gc='clear; git commit -m'
-alias gd='clear; git diff'
-alias gl='clear; git log'
-alias tig=${HOME}/bin/tig
-
-# vimwiki aliases
-alias vw='vim -c VimwikiIndex'
-alias vimwiki='cd ${HOME}/code/wacevedo76/vimwiki'
-alias vwtig='cd ${HOME}/code/wacevedo76/vimwiki && tig'
-alias vwp='cd ${HOME}/code/wacevedo76/vimwiki && git push origin main'
-
-# ruby aliases
-alias brspec='bundle exec rspec -fd'
-alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
-alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
-
-# php aliases
-alias composer="${HOME}/.local/bin/composer/composer.phar"
-alias bright='xrandr --output LVDS1 --brightness'
-
-# neovim
+# neovim aliases
 alias vim=/usr/local/bin/nvim
 alias v='nvim $(fzf)'
 alias lswap='ll ~/.local/share/nvim/swap'
@@ -69,7 +52,41 @@ alias gswap='cd ~/.local/share/nvim/swap'
 alias rmswap='rm -rf ~/.local/share/nvim/swap/*'
 alias virc='vim ${HOME}/.config/nvim/init.vim'
 
+# vimwiki aliases
+alias vw='vim -c VimwikiIndex'
+alias vw2='vim ${HOME}/code/wacevedo76/vimwiki2/vimwiki2_index.wiki'
+alias vimwiki='cd ${HOME}/code/wacevedo76/vimwiki'
+alias vwp='cd ${HOME}/code/wacevedo76/vimwiki && git push origin main'
+
+# git aliases
+alias gs='clear; git status'
+alias ga='clear; git add'
+alias gc='clear; git commit -m'
+alias gd='clear; git diff'
+alias gl='clear; git log'
+
+# Ruby and Rails aliases
+alias brspec='bundle exec rspec -fd'
+alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+# Python Django Unit tests
+alias rat='clear; python manage.py test'
+alias rsrvr='clear; python manage.py runserver'
+alias mpvplay='mpv --playlist=./playlist &'
+
+# Php aliases
+alias composer="${HOME}/.local/bin/composer/composer.phar"
+alias bright='xrandr --output LVDS1 --brightness'
+
+# Docker aliases
 alias sdoc='sudo docker'
+alias sdocsrt='sudo docker start'
+alias sdocstp='sudo docker stop'
+alias sdocp='sudo docker ps'
+alias sdocpa='sudo docker ps'
+alias sdocpa='sudo docker ps -a'
+alias sdocomp='sudo docker-compose'
 
 # misc aliases
 alias mutt=neomutt
@@ -77,12 +94,8 @@ alias irc=irssi
 alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
 alias ema='extramonitor.sh attach'
 alias emd='extramonitor.sh detach'
-
-# speed test
-alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias setvi='set -o vi'
 
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
-
-# python Django Unit tests
-alias rat='clear; python manage.py test'
-alias rsrvr='clear; python manage.py runserver'
+alias am='alsamixer -c 1'
+alias sctl='sudo systemctl'

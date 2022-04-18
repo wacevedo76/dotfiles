@@ -1,4 +1,3 @@
-# ----------------- Timer functions - Bash Script ------------------------------
 # set a countdown timer
 function countdown(){
    local date1=$((`date +%s` + $1 * 60));
@@ -58,6 +57,7 @@ function train() {
   return 0
 }
 
+# Create working environment for Python virtual environments
 function tsn() {
   local SESSION=${1}
   local PROJECTDIR=${2}
@@ -97,4 +97,38 @@ function tsn() {
     echo "No such defined argument"
     return 1
   fi
+}
+# Make simple playlist for mpv
+function simplePlayList(){
+  for file in *; do
+    if [[ $file == *.mp4 ]]; then
+      echo "${file}" >> ./playlist;
+    fi;
+  done;
+  return 0
+}
+
+function sp() {
+  local comment="$@"
+  local scratch="${HOME}/Documents/scratchpad"
+  if [[ ! -e $scratch ]]; then
+# create scratchpad file remove execute from all user and rw from groups and others
+    touch $scratch
+    chmod a-x $scratch
+    chmod go-rw $scratch
+    echo "Created scratchpad";
+
+    # add comment to scratchpad doc
+    echo $comment >> $scratch
+    echo "${comment} was added to ${scratch}."
+
+  else
+    # add comment to scratchpad doc
+    echo $comment >> $scratch
+    echo "${comment} was added to ${scratch}."
+  fi
+}
+
+function rsp() {
+ tac $HOME/Documents/scratchpad | less
 }
