@@ -79,15 +79,6 @@ alias mpvplay='mpv --playlist=./playlist &'
 alias composer="${HOME}/.local/bin/composer/composer.phar"
 alias bright='xrandr --output LVDS1 --brightness'
 
-# Docker aliases
-alias sdoc='sudo docker'
-alias sdocsrt='sudo docker start'
-alias sdocstp='sudo docker stop'
-alias sdocp='sudo docker ps'
-alias sdocpa='sudo docker ps'
-alias sdocpa='sudo docker ps -a'
-alias sdocomp='sudo docker-compose'
-
 # misc aliases
 alias mutt=neomutt
 alias irc=irssi
@@ -99,3 +90,4 @@ alias setvi='set -o vi'
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
 alias am='alsamixer -c 1'
 alias sctl='sudo systemctl'
+alias srczsh='source  ${HOME}/.zshrc'

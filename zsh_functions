@@ -121,11 +121,13 @@ function sp() {
     # add comment to scratchpad doc
     echo $comment >> $scratch
     echo "${comment} was added to ${scratch}."
+    less ${scratch}
 
   else
     # add comment to scratchpad doc
     echo $comment >> $scratch
     echo "${comment} was added to ${scratch}."
+    less ${scratch}
   fi
 }
 
