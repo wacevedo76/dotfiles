@@ -121,16 +121,19 @@ function sp() {
     # add comment to scratchpad doc
     echo $comment >> $scratch
     echo "${comment} was added to ${scratch}."
-    less ${scratch}
+    cat ${scratch}
 
   else
     # add comment to scratchpad doc
     echo $comment >> $scratch
     echo "${comment} was added to ${scratch}."
-    less ${scratch}
+    cat ${scratch}
   fi
 }
 
-function rsp() {
+function esp() {
+  vim $HOME/Documents/scratchpad
+}
+function dsp() {
  tac $HOME/Documents/scratchpad | less
 }

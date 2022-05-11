@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Source Virtualenvwrapper
+source ${HOME}/.local/bin/virtualenvwrapper.sh
+
 # rbenv setings
 eval "$(rbenv init - zsh)"
 
@@ -112,5 +115,3 @@ export NVM_DIR="$HOME/.nvm"
 # Loading aliases and user defined functions
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 [[ -f "$HOME/.zsh_functions" ]] && source "$HOME/.zsh_functions"
-alias etp='/home/wacevedo/code/Issues/Enable_trackpad'
-alias dtp='/home/wacevedo/code/Issues/Disable_trackpad'
