@@ -84,20 +84,15 @@ _G.packer_plugins = {
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/emmet-vim",
-    url = "https://github.com/mattn/emmet-vim"
-  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
-  ["lspkind-nvim"] = {
+  ["lspkind.nvim"] = {
     loaded = true,
-    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
-    url = "https://github.com/onsails/lspkind-nvim"
+    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -115,14 +110,10 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
+    config = { "\27LJ\2\nv\0\0\4\0\5\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\1\4\0009\1\2\0014\3\0\0B\1\2\1K\0\1\0\16sumneko_lua\14lspconfig\nsetup\23nvim-lsp-installer\frequire\0" },
     loaded = true,
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-notify"] = {
-    loaded = true,
-    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -154,35 +145,10 @@ _G.packer_plugins = {
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["telescope-fzf-native.nvim"] = {
-    loaded = true,
-    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
-    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vim-fake"] = {
-    loaded = true,
-    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vim-fake",
-    url = "https://github.com/tkhren/vim-fake"
-  },
-  ["vim-indentguides"] = {
-    loaded = true,
-    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vim-indentguides",
-    url = "https://github.com/thaerkh/vim-indentguides"
-  },
-  ["vim-regex-syntax"] = {
-    loaded = true,
-    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vim-regex-syntax",
-    url = "https://github.com/Galicarnax/vim-regex-syntax"
-  },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vim-startify",
-    url = "https://github.com/mhinz/vim-startify"
   },
   vimwiki = {
     loaded = true,
@@ -192,6 +158,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\nv\0\0\4\0\5\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\1\4\0009\1\2\0014\3\0\0B\1\2\1K\0\1\0\16sumneko_lua\14lspconfig\nsetup\23nvim-lsp-installer\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 if should_profile then save_profiles() end
 
 end)

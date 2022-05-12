@@ -1,11 +1,12 @@
-require'lualine'.setup{
- options = {
+require('lualine').setup {
+  options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'gruvbox',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
+    globalstatus = false,
   },
   sections = {
     lualine_a = {'mode'},
@@ -26,3 +27,5 @@ require'lualine'.setup{
   tabline = {},
   extensions = {}
 }
+
+require('lualine').setup()

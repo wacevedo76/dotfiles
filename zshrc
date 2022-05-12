@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export EDITOR=vim
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.rbenv/bin:$PATH
+export PATH=${HOME}/bin:${HOME}/.local/bin:${HOME}/.rbenv/bin:${HOME}/.local/share/nvim:$PATH
 export HIST_STAMPS="%d/%m/%y %T "
 
 # Path to your oh-my-zsh installation.
