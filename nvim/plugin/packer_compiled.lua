@@ -150,6 +150,11 @@ _G.packer_plugins = {
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
+  },
   vimwiki = {
     loaded = true,
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vimwiki",
