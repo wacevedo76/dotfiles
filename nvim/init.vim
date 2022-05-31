@@ -28,3 +28,6 @@ autocmd InsertEnter * norm zz
 
 " Remove trailing white space when saving
 autocmd BufWritePre * :%s/\s\+$//e
+
+let g:vimwiki_list = [{'path': '~/code/wacevedo76/vimwiki/'}]
+

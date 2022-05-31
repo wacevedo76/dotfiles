@@ -155,6 +155,11 @@ _G.packer_plugins = {
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vim-css-color",
     url = "https://github.com/ap/vim-css-color"
   },
+  ["vim-fake"] = {
+    loaded = true,
+    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vim-fake",
+    url = "https://github.com/tkhren/vim-fake"
+  },
   vimwiki = {
     loaded = true,
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vimwiki",
