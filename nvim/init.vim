@@ -30,4 +30,3 @@ autocmd InsertEnter * norm zz
 autocmd BufWritePre * :%s/\s\+$//e
 
 let g:vimwiki_list = [{'path': '~/code/wacevedo76/vimwiki/'}]
-

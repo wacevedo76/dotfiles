@@ -1,0 +1,7 @@
+# agnoster.zsh-theme setting -> limit prompt directory listing to current and parent direcoties
+# Dir: current working directory
+prompt_dir() {
+  prompt_segment blue $CURRENT_FG '%2/'
+}
+
+Nice Fonts: Azret - (https://github.com/displaay/Azeret)

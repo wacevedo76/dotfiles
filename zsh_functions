@@ -57,6 +57,12 @@ function train() {
   return 0
 }
 
+function tnsd() {
+  for arg
+    do tmux new -s "$arg" -d
+  done
+}
+
 # Create working environment for Python virtual environments
 function tsn() {
   local SESSION=${1}
@@ -101,13 +107,14 @@ function tsn() {
 # Make simple playlist for mpv
 function simplePlayList(){
   for file in *; do
-    if [[ $file == *.mp4 ]]; then
+    if [[ $file == *.mkv ]]; then
       echo "${file}" >> ./playlist;
     fi;
   done;
   return 0
 }
 
+# Simple scratchpad function
 function sp() {
   local comment="$@"
   local scratch="${HOME}/Documents/scratchpad"
@@ -131,9 +138,38 @@ function sp() {
   fi
 }
 
+# display scratchpad
 function esp() {
   vim $HOME/Documents/scratchpad
 }
+
+# diplay scratchpad in reverse
 function dsp() {
  tac $HOME/Documents/scratchpad | less
+}
+
+# simple pinknoise sound generator
+function pinknoise() {
+  len='7:00:00'
+
+  if [ "$1" != '' ]; then
+    len=$1
+  fi
+
+  play -t sl - synth $len  pinknoise \
+       band -n 1200 200 tremolo 20 .1 < /dev/zero
+}
+
+# disable touchpad on thinkpad x250 (using Synaptic driver)
+function dtp() {
+  device=$(xinput | grep Synaptics | rg -o "(id=[0-9]*)" | cut -d= -f2)
+
+  xinput disable $device
+}
+
+# enable touchpad on thinkpad x250 (using Synaptic driver)
+function etp() {
+  device=$(xinput | grep Synaptics | rg -o "(id=[0-9]*)" | cut -d= -f2)
+
+  xinput enable $device
 }

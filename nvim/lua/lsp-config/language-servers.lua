@@ -36,11 +36,10 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
-  'pyright',
-  'tsserver',
   'ansiblels',
   'awk_ls',
   'bashls',
+  'clojure_lsp',
   'cmake',
   'cssls',
   'dockerls',
@@ -53,8 +52,10 @@ local servers = {
   'pyright',
   'quick_lint_js',
   'solargraph',
-  'tsserver',
+  'tailwindcss',
   'sumneko_lua',
+  'tsserver',
+  'yamlls',
 }
 for _, lsp in pairs(servers) do
   require("nvim-lsp-installer").setup {}

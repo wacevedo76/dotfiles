@@ -5,11 +5,12 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
   use 'vimwiki/vimwiki'
-  use 'ap/vim-css-color'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-refactor'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
-  use 'tkhren/vim-fake'
+  use 'tpope/vim-fireplace'
+  use 'tpope/vim-salve'
+  use 'Olical/conjure'
 
 -- LSP Plugins
   use { "williamboman/nvim-lsp-installer",
