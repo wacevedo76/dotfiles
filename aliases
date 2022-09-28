@@ -27,6 +27,7 @@ alias series='cd /media/smb/Videos/Series'
 alias smbanon='cd /media/smb/Anonymous'
 alias smbaudio='cd /media/smb/Audio'
 alias smbbooks='cd /media/smb/Books'
+alias smbitbooks='cd /media/smb/Books/IT'
 alias smbdocs='cd /media/smb/Documents'
 alias smbsoftware='cd /media/smb/Software'
 alias smbtrain='cd /media/smb/Documents/code/training'
@@ -44,6 +45,10 @@ alias e='exa --color=always'
 alias rless='less -r'
 alias sctl='sudo systemctl'
 alias sz='source  ${HOME}/.zshrc'
+alias ezshrc='dotfiles && vim ./zshrc'
+alias ealiases='dotfiles && vim ./aliases'
+alias ezshfunc='dotfiles && vim ./zsh_functions'
+
 
 # tmux aliases
 alias t='clear; tmux ls'
