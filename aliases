@@ -22,15 +22,23 @@ alias myfullstack='cd ${HOME}/code/*/fullstack-challenges'
 alias myman='cd ${HOME}/Documents/Manuals'
 
 # Common Shared directories
+alias career='cd /home/wacevedo/Documents/Career'
+alias series='cd /media/smb/Videos/Series'
 alias smbanon='cd /media/smb/Anonymous'
 alias smbaudio='cd /media/smb/Audio'
 alias smbbooks='cd /media/smb/Books'
+alias smbcareer='cd /media/smb/Documents/Career'
+alias smbdocs='cd /media/smb/Documents'
 alias smbsoftware='cd /media/smb/Software'
+alias smbtrain='cd /media/smb/Documents/code/training'
 alias smbvids='cd /media/smb/Videos'
-alias smbvidstr='cd /media/smb/Videos/Training'
+alias smbvidstr='cd /media/smb/Videos/Training/IT'
+alias smbvidstrcert='cd /media/smb/Videos/Training/IT/Certification'
+alias smbvidstrdevops='cd /media/smb/Videos/Training/IT/DevOps'
+alias smbvidstrpro='cd /media/smb/Videos/Training/IT/Application\ Programming'
 alias smbvidstrytdevops='/media/smb/Videos/Training/Youtube/IT/DevOps'
-alias smbvidstrytpro='/media/smb/Videos/Training/Youtube/IT/Programming'
 alias smbvidstrytnet='/media/smb/Videos/Training/Youtube/IT/Networking'
+alias smbvidstrytpro='/media/smb/Videos/Training/Youtube/IT/Programming'
 
 # shell aliases
 alias ..='cd ..'
@@ -50,7 +58,7 @@ alias v='nvim $(fzf)'
 alias lswap='ll ~/.local/share/nvim/swap'
 alias gswap='cd ~/.local/share/nvim/swap'
 alias rmswap='rm -rf ~/.local/share/nvim/swap/*'
-alias virc='vim ${HOME}/.config/nvim/init.vim'
+alias evim='vim ${HOME}/.config/nvim/init.vim'
 
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
@@ -70,7 +78,8 @@ alias brspec='bundle exec rspec -fd'
 alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 
-# Python Django Unit tests
+# Python aliases
+# Django Unit tests
 alias rat='clear; python manage.py test'
 alias rsrvr='clear; python manage.py runserver'
 alias mpvplay='mpv --playlist=./playlist &'
@@ -80,14 +89,20 @@ alias composer="${HOME}/.local/bin/composer/composer.phar"
 alias bright='xrandr --output LVDS1 --brightness'
 
 # misc aliases
-alias mutt=neomutt
-alias irc=irssi
-alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
+alias am='alsamixer'
+alias careersyncfromsmb='rsync -ai /media/smb/Documents/Career/ /home/wacevedo/Documents/Career/'
+alias careersynctosmb='rsync -ai /home/wacevedo/Documents/Career/ /media/smb/Documents/Career/'
 alias ema='extramonitor.sh attach'
 alias emd='extramonitor.sh detach'
-alias setvi='set -o vi'
-
-alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
-alias am='alsamixer -c 1'
+alias etp='xinput set-prop 12 306 1OD'
+alias irc=irssi
+alias mutt=neomutt
+alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
 alias sctl='sudo systemctl'
-alias srczsh='source  ${HOME}/.zshrc'
+alias sdoc='sudo docker'
+alias setvi='set -o vi'
+alias sz='source  ${HOME}/.zshrc'
+alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
+alias shows='cd /media/smb/Videos/Shows'
+alias ob='nohup zathura'
+alias smbitbooks='cd /media/smb/Books/IT'

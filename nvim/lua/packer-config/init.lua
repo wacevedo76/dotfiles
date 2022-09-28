@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-refactor'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   use 'tkhren/vim-fake'
+  use 'Olical/conjure'
 
 -- LSP Plugins
   use { "williamboman/nvim-lsp-installer",

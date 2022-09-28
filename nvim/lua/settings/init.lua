@@ -12,7 +12,7 @@ set.smartcase = true
 set.splitbelow = true
 set.splitright = true
 set.wrap = false
-set.scrolloff = 5
+set.scrolloff = 2
 set.fileencoding = 'utf-8'
 
 set.nu = true
@@ -32,6 +32,7 @@ set.linebreak = true
 set.autoindent = true
 set.autochdir = true
 set.updatetime = 300
+vim.wo.fillchars='eob: '
 
 -- let mapleader = " "
 -- let maplocalleader = ','
