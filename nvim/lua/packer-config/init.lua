@@ -11,6 +11,9 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   use 'tkhren/vim-fake'
 
+-- Clojure Plugins
+  use 'Olical/conjure'
+
 -- LSP Plugins
   use { "williamboman/nvim-lsp-installer",
     { "neovim/nvim-lspconfig",

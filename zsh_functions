@@ -57,6 +57,20 @@ function train() {
   return 0
 }
 
+# Make multiple detached named tmux sessions
+function tnsd() {
+  for session in "$@"; do
+    tmux new -s "$session" -d
+  done
+}
+
+# Kill all open tmux sessions
+function tksa() {
+  for session in `t | cut -d: -f1`; do
+    tks "$session"
+  done
+}
+
 # Create working environment for Python virtual environments
 function tsn() {
   local SESSION=${1}
@@ -134,6 +148,7 @@ function sp() {
 function esp() {
   vim $HOME/Documents/scratchpad
 }
+
 function dsp() {
  tac $HOME/Documents/scratchpad | less
 }

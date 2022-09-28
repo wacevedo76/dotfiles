@@ -22,21 +22,28 @@ alias myfullstack='cd ${HOME}/code/*/fullstack-challenges'
 alias myman='cd ${HOME}/Documents/Manuals'
 
 # Common Shared directories
+alias career='cd /media/smb/Documents/Career'
+alias series='cd /media/smb/Videos/Series'
 alias smbanon='cd /media/smb/Anonymous'
 alias smbaudio='cd /media/smb/Audio'
 alias smbbooks='cd /media/smb/Books'
+alias smbdocs='cd /media/smb/Documents'
 alias smbsoftware='cd /media/smb/Software'
+alias smbtrain='cd /media/smb/Documents/code/training'
 alias smbvids='cd /media/smb/Videos'
 alias smbvidstr='cd /media/smb/Videos/Training'
+alias smbvidstrdevops='cd /media/smb/Videos/Training/IT/DevOps'
 alias smbvidstrytdevops='/media/smb/Videos/Training/Youtube/IT/DevOps'
-alias smbvidstrytpro='/media/smb/Videos/Training/Youtube/IT/Programming'
 alias smbvidstrytnet='/media/smb/Videos/Training/Youtube/IT/Networking'
+alias smbvidstrytpro='/media/smb/Videos/Training/Youtube/IT/Programming'
 
 # shell aliases
 alias ..='cd ..'
 alias ...='cd ../..'
 alias e='exa --color=always'
 alias rless='less -r'
+alias sctl='sudo systemctl'
+alias sz='source  ${HOME}/.zshrc'
 
 # tmux aliases
 alias t='clear; tmux ls'
@@ -50,7 +57,7 @@ alias v='nvim $(fzf)'
 alias lswap='ll ~/.local/share/nvim/swap'
 alias gswap='cd ~/.local/share/nvim/swap'
 alias rmswap='rm -rf ~/.local/share/nvim/swap/*'
-alias virc='vim ${HOME}/.config/nvim/init.vim'
+alias evim='vim ${HOME}/.config/nvim/init.vim'
 
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
@@ -64,6 +71,9 @@ alias ga='clear; git add'
 alias gc='clear; git commit -m'
 alias gd='clear; git diff'
 alias gl='clear; git log'
+
+# Docker aliases
+alias sdoc='sudo docker'
 
 # Ruby and Rails aliases
 alias brspec='bundle exec rspec -fd'
@@ -82,12 +92,7 @@ alias bright='xrandr --output LVDS1 --brightness'
 # misc aliases
 alias mutt=neomutt
 alias irc=irssi
-alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
-alias ema='extramonitor.sh attach'
-alias emd='extramonitor.sh detach'
 alias setvi='set -o vi'
-
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
 alias am='alsamixer -c 1'
-alias sctl='sudo systemctl'
-alias srczsh='source  ${HOME}/.zshrc'
+alias rscreen='xrandr --output DisplayPort-0 --rotate right'
