@@ -4,8 +4,19 @@
 #  \ V  V | (_| | (_|  __/\ V |  __| (_| | (_) | | (_| | | | (_| \__ |  __\__ \
 #   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/   \__,_|_|_|\__,_|___/\___|___/
 
-# Dotfiles alias
-alias dotfiles='cd ${HOME}/code/*/dotfiles/'
+# shell aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias e='exa --color=always'
+alias ealiases='dotfiles && vim aliases'
+alias ezshfunc='dotfiles && vim zsh_functions'
+alias ezshrc='dotfiles && vim zshrc'
+alias myown='sudo chown -R ${USER}:${USER} ./*'
+alias rless='less -r'
+alias setvi='set -o vi'
+alias sranger='sudo ranger .'
+alias sz='source /home/wacevedo/.zshrc'
+alias startnmx='nmcli c u Matka_Rulez && sudo mount -a && startx'
 
 # Common Local file aliases
 alias mycode='cd ${HOME}/code'
@@ -16,27 +27,33 @@ alias mynotes='cd ${HOME}/Documents/Notes'
 alias mydownloads='cd ${HOME}/Downloads'
 alias myman="cd ${HOME}/Documents/Manuals"
 alias mywa='cd ${HOME}/code/wacevedo76'
-alias mytrain='cd ${HOME}/code/wacevedo76/training'
+alias mytrain='cd ${HOME}/code/*/training'
 alias mytrainvids='cd ${HOME}/Videos/Training/'
 alias myfullstack='cd ${HOME}/code/*/fullstack-challenges'
 alias myman='cd ${HOME}/Documents/Manuals'
+alias dotfiles='cd ${HOME}/code/*/dotfiles/'
 
 # Common Shared directories
+alias films='cd /media/smb/Videos/Films'
+alias myitbooks='cd /home/*/Documents/Books/IT'
+alias series='cd /media/smb/Videos/Series'
 alias smbanon='cd /media/smb/Anonymous'
 alias smbaudio='cd /media/smb/Audio'
 alias smbbooks='cd /media/smb/Books'
 alias smbsoftware='cd /media/smb/Software'
+alias smbtrain='cd /media/smb/Documents/code/training'
 alias smbvids='cd /media/smb/Videos'
 alias smbvidstr='cd /media/smb/Videos/Training'
-alias smbvidstrytdevops='/media/smb/Videos/Training/Youtube/IT/DevOps'
-alias smbvidstrytpro='/media/smb/Videos/Training/Youtube/IT/Programming'
-alias smbvidstrytnet='/media/smb/Videos/Training/Youtube/IT/Networking'
-
-# shell aliases
-alias ..='cd ..'
-alias ...='cd ../..'
-alias e='exa --color=always'
-alias rless='less -r'
+alias smbvidstrcerts='cd /media/smb/Videos/Training/IT/Certification'
+alias smbvidstrcompsci='cd /media/smb/Videos/Training/IT/CompSci'
+alias smbvidstrdesign='cd /media/smb/Videos/Training/IT/Design'
+alias smbvidstrdevops='cd /media/smb/Videos/Training/IT/DevOps'
+alias smbvidstrpro='cd /media/smb/Videos/Training/IT/Application\ Programming'
+alias smbvidstrtool='cd /media/smb/Videos/Training/IT/Tooling'
+alias smbvidstryt='cd /media/smb/Videos/Training/Youtube/IT'
+alias smbvidstrytdevops='cd /media/smb/Videos/Training/Youtube/IT/DevOps'
+alias smbvidstrytnet='cd /media/smb/Videos/Training/Youtube/IT/Networking'
+alias smbvidstrytpro='cd /media/smb/Videos/Training/Youtube/IT/Programming'
 
 # tmux aliases
 alias t='clear; tmux ls'
@@ -44,20 +61,11 @@ alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
 
-# neovim aliases
-alias vim=/usr/local/bin/nvim
-alias v='nvim $(fzf)'
-alias lswap='ll ~/.local/share/nvim/swap'
-alias gswap='cd ~/.local/share/nvim/swap'
-alias rmswap='rm -rf ~/.local/share/nvim/swap/*'
-alias virc='vim ${HOME}/.config/nvim/init.vim'
-
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
-alias vw2='vim ${HOME}/code/wacevedo76/vimwiki2/vimwiki2_index.wiki'
-alias vimwiki='cd ${HOME}/code/wacevedo76/vimwiki'
-alias vwp='cd ${HOME}/code/wacevedo76/vimwiki && git push origin main'
-
+alias vw2='vim ${HOME}/code/*/vimwiki2/vimwiki2_index.wiki'
+alias vimwiki='cd ${HOME}/code/*/vimwiki'
+alias vwp='cd ${HOME}/code/*/vimwiki && git push origin main'
 # git aliases
 alias gs='clear; git status'
 alias ga='clear; git add'
@@ -79,15 +87,26 @@ alias mpvplay='mpv --playlist=./playlist &'
 alias composer="${HOME}/.local/bin/composer/composer.phar"
 alias bright='xrandr --output LVDS1 --brightness'
 
+# neovim aliases
+alias vim=/usr/local/bin/nvim
+alias v='nvim $(fzf)'
+alias lswap='ll ~/.local/share/nvim/swap'
+alias gswap='cd ~/.local/share/nvim/swap'
+alias rmswap='rm -rf ~/.local/share/nvim/swap/*'
+alias evimrc='dotfiles && cd nvim && vim init.vim'
+
+# Docker aliases
+alias sdoc='sudo docker'
+alias sdocp='sudo docker-compose'
+
+# Python Django Unit tests
+alias rat='clear; python manage.py test'
+alias rsrvr='clear; python manage.py runserver'
+alias mpvplay='mpv --playlist=./playlist'
+alias sysctl='sudo systemctl'
+alias setvi='set -o vi;source ~/.zshrc'
+
 # misc aliases
 alias mutt=neomutt
 alias irc=irssi
-alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
-alias ema='extramonitor.sh attach'
-alias emd='extramonitor.sh detach'
-alias setvi='set -o vi'
-
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
-alias am='alsamixer -c 1'
-alias sctl='sudo systemctl'
-alias srczsh='source  ${HOME}/.zshrc'
