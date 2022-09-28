@@ -37,6 +37,7 @@ function vman(){
 # removes all vim swapfiles from swap directory
 function clearvimswap() {
   rm -rf /home/wacevedo/.config/nvim/swap/*
+  rm -rf ${HOME}/.local/state/nvim/swap*
   return 0
 }
 
