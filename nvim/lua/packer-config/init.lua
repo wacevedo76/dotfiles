@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fireplace'
   use 'tpope/vim-salve'
   use 'Olical/conjure'
+  use 'dmac/vim-cljfmt'
+  use 'clojure-vim/async-clj-omni'
 
 -- LSP Plugins
   use { "williamboman/nvim-lsp-installer",

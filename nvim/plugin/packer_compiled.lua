@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["async-clj-omni"] = {
+    loaded = true,
+    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/async-clj-omni",
+    url = "https://github.com/clojure-vim/async-clj-omni"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -159,6 +164,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-cljfmt"] = {
+    loaded = true,
+    path = "/home/wacevedo/.local/share/nvim/site/pack/packer/start/vim-cljfmt",
+    url = "https://github.com/dmac/vim-cljfmt"
   },
   ["vim-fireplace"] = {
     loaded = true,
