@@ -17,7 +17,7 @@ alias setvi='set -o vi'
 alias sranger='sudo ranger .'
 alias sz='source /home/wacevedo/.zshrc'
 alias startnmmx='nmcli c u Matka_Rulez && sudo mount -a && startx'
-alias startnwmx='nmcli c u willsPhone && startpi && startx'
+alias startnwmx='nmcli c u willsPhone && sctl start docker.service && startpi && startx'
 alias am='alsamixer -D default:1'
 
 # Common Local file aliases
