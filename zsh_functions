@@ -5,6 +5,7 @@ function countdown(){
      echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
      sleep 0.1
    done
+   mpv --loop "$HOME/Audio/countdown_alarm.mp3"
    return 0
 }
 
@@ -119,6 +120,7 @@ function sp() {
   local comment="$@"
   local scratch="${HOME}/Documents/scratchpad"
   if [[ ! -e $scratch ]]; then
+
 # create scratchpad file remove execute from all user and rw from groups and others
     touch $scratch
     chmod a-x $scratch
@@ -172,4 +174,9 @@ function etp() {
   device=$(xinput | grep Synaptics | rg -o "(id=[0-9]*)" | cut -d= -f2)
 
   xinput enable $device
+}
+
+# Simple search through history for search term
+function shistory() {
+  history | sort -rn | grep "$1" | less
 }
