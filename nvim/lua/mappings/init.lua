@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true}
 local optsns = { noremap = true, silent = false}
 
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ','
+vim.g.maplocalleader = '/'
 
 map('n', '<space>', ':nohl<bar>:echo<cr>', opts)
 map('n', '<leader><Tab>', ':NvimTreeToggle<CR>', opts)
