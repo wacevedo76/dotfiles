@@ -12,7 +12,7 @@ set.smartcase = true
 set.splitbelow = true
 set.splitright = true
 set.wrap = false
-set.scrolloff = 5
+set.scrolloff = 1
 set.fileencoding = 'utf-8'
 
 set.nu = true
