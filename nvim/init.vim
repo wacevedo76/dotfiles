@@ -1,12 +1,12 @@
 lua << EOF
-  require('settings')
-  require('packer-config')
-  require('mappings')
   require('colorschemes-config.gruvbox')
-  require('lualine-config')
-  require('nvim-tree-config')
   require('lsp-config.language-servers')
   require('lsp-config.nvim-cmp')
+  require('lualine-config')
+  require('mappings')
+  require('nvim-tree-config')
+  require('packer-config')
+  require('settings')
   require('treesitter-config')
 EOF
 
