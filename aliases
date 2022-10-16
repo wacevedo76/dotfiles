@@ -114,3 +114,5 @@ alias setvi='set -o vi;source ~/.zshrc'
 alias mutt=neomutt
 alias irc=irssi
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
+alias repo='cd ~/code/Repos'
+alias tnsa='tnsd Main SSH && mytrain && cd Clojure && tnsd Clojure && cd ../Python && tnsd Python && vimwiki && git pull origin main && tnsd VimWiki && cd && tnsd Typing'
