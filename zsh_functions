@@ -58,6 +58,7 @@ function train() {
   return 0
 }
 
+# Open multiple Tmux sessions
 function tnsd() {
   for arg
     do tmux new -s "$arg" -d
@@ -105,6 +106,7 @@ function tsn() {
     return 1
   fi
 }
+
 # Make simple playlist for mpv
 function simplePlayList(){
   for file in *; do
@@ -179,4 +181,17 @@ function etp() {
 # Simple search through history for search term
 function shistory() {
   history | sort -rn | grep "$1" | less
+}
+
+# toggle touch to tap on touchpad
+function ttt() {
+  device=$(xinput | grep Synaptics | rg -o '(id=[0-9]*)' | cut -d= -f2)
+  property=$(xinput list-props $device | grep --only-matching '.*Tapping Enabled [^Device].*' | cut -d: -f1 | sed 's:[^0-9]*::g')
+  setting=$(xinput list-props $device | grep --only-matching '.*Tapping Enabled [^Device].*' | cut -d: -f2 | sed 's:[^0-9]*::g')
+
+  if [[ $setting -eq 1 ]]; then
+    xinput set-prop $device $property 0
+  else;
+    xinput set-prop $device $property 1
+  fi;
 }
