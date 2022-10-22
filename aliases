@@ -58,11 +58,12 @@ alias smbvidstrytdevops='cd /media/smb/Videos/Training/Youtube/IT/DevOps'
 alias smbvidstrytnet='cd /media/smb/Videos/Training/Youtube/IT/Networking'
 alias smbvidstrytpro='cd /media/smb/Videos/Training/Youtube/IT/Programming'
 
-# tmux aliases
+# Tmux aliases
 alias t='clear; tmux ls'
 alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
+alias tnsa='tnsd Main SSH && mytrain && cd Clojure && tnsd Clojure && cd ../Python && tnsd Python && vimwiki && git pull origin main && tnsd VimWiki && cd && tnsd Typing'
 
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
@@ -110,9 +111,11 @@ alias mpvplay='mpv --playlist=./playlist'
 alias sctl='sudo systemctl'
 alias setvi='set -o vi;source ~/.zshrc'
 
+# Clojure aliases
+alias cljnrepl='clj -M:nREPL -m nrepl.cmdline'
+
 # misc aliases
 alias mutt=neomutt
 alias irc=irssi
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
 alias repo='cd ~/code/Repos'
-alias tnsa='tnsd Main SSH && mytrain && cd Clojure && tnsd Clojure && cd ../Python && tnsd Python && vimwiki && git pull origin main && tnsd VimWiki && cd && tnsd Typing'
