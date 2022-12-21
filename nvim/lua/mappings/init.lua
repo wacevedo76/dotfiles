@@ -10,6 +10,7 @@ map('n', '<leader><Tab>', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>ig', ':IndentGuidesToggle<CR>', opts)
 map('n', '<leader>tt', ':set nu! rnu!<CR>', opts)
 map('i', 'jk', '<esc>', opts)
+map('i', 'JK', '<esc>', opts)
 
 map('n', '<c-h>', '<c-w>h', opts)
 map('n', '<c-j>', '<c-w>j', opts)

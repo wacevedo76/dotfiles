@@ -5,20 +5,26 @@
 #   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/   \__,_|_|_|\__,_|___/\___|___/
 
 # shell aliases
+alias c='clear;'
+alias s='sudo'
+alias cl='c ls -1'
+alias cll='c ls -lF'
+alias cla='c ls -alF'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias e='exa --color=always'
 alias ealiases='dotfiles && vim aliases'
-alias ezshfunc='dotfiles && vim zsh_functions'
+alias ezshfn='dotfiles && vim zsh_functions'
 alias ezshrc='dotfiles && vim zshrc'
-alias myown='sudo chown -R ${USER}:${USER} ./*'
+alias myown='s chown -R ${USER}:${USER} ./*'
 alias rless='less -r'
 alias setvi='set -o vi'
-alias sranger='sudo ranger .'
+alias sranger='s ranger .'
 alias sz='source /home/wacevedo/.zshrc'
-alias startnmmx='nmcli c u Matka_Rulez && sudo mount -a && startx'
+alias startnmmx='nmcli c u Matka_Rulez && s mount -a && startx'
 alias startnwmx='nmcli c u willsPhone && sctl start docker.service && startpi && startx'
 alias am='alsamixer -D default:1'
+alias svim='s vim'
 
 # Common Local file aliases
 alias mycode='cd ${HOME}/code'
@@ -57,19 +63,22 @@ alias smbvidstryt='cd /media/smb/Videos/Training/Youtube/IT'
 alias smbvidstrytdevops='cd /media/smb/Videos/Training/Youtube/IT/DevOps'
 alias smbvidstrytnet='cd /media/smb/Videos/Training/Youtube/IT/Networking'
 alias smbvidstrytpro='cd /media/smb/Videos/Training/Youtube/IT/Programming'
+alias smbvidstryttooling='cd /media/smb/Videos/Training/Youtube/IT/Tooling'
+alias smbvidstrytlinux='cd /media/smb/Videos/Training/Youtube/IT/Linux'
 
 # Tmux aliases
 alias t='clear; tmux ls'
 alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
-alias tnsa='tnsd Main SSH && mytrain && cd Clojure && tnsd Clojure && cd ../Python && tnsd Python && vimwiki && git pull origin main && tnsd VimWiki && cd && tnsd Typing'
+alias tnsa='tnsd Main SSH && vimwiki && git pull origin main && tnsd VimWiki && cd'
 
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
 alias vw2='vim ${HOME}/code/*/vimwiki2/vimwiki2_index.wiki'
 alias vimwiki='cd ${HOME}/code/*/vimwiki'
 alias vwp='cd ${HOME}/code/*/vimwiki && git push origin main'
+
 # git aliases
 alias gs='clear; git status'
 alias ga='clear; git add'
@@ -98,17 +107,19 @@ alias lswap='ll ~/.local/share/nvim/swap'
 alias gswap='cd ~/.local/share/nvim/swap'
 alias rmswap='rm -rf ~/.local/share/nvim/swap/*'
 alias evimrc='dotfiles && cd nvim && vim init.vim'
+alias ehosts='s vim /etc/hosts'
 
 # Docker aliases
-alias sdoc='sudo docker'
-alias sdocp='sudo docker-compose'
-alias startpi='cd $HOME/code/Repos/Pihole && sudo docker-compose up -d'
+alias startdoc='sctl start docker.service'
+alias sdoc='s docker'
+alias sdocp='s docker-compose'
+alias startpi='cd $HOME/code/Repos/Pihole && s docker-compose up -d && cd'
 
 # Python Django Unit tests
 alias rat='clear; python manage.py test'
 alias rsrvr='clear; python manage.py runserver'
 alias mpvplay='mpv --playlist=./playlist'
-alias sctl='sudo systemctl'
+alias sctl='s systemctl'
 alias setvi='set -o vi;source ~/.zshrc'
 
 # Clojure aliases
@@ -119,3 +130,7 @@ alias mutt=neomutt
 alias irc=irssi
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
 alias repo='cd ~/code/Repos'
+alias esshcf='vim $HOME/.ssh/config'
+alias rs='xrandr --output DP-2 --mode 1920x1080 --rate 60 --left-of eDP-1 --rotate left'
+alias cqt='copyq toggle'
+alias smbitbooks='cd /media/smb/Books/it'

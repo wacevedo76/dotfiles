@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export EDITOR=vim
+export EDITOR=vim VISUAL=vi
 export PATH=${HOME}/bin:${HOME}/.local/bin:${HOME}/.rbenv/bin:${HOME}/.local/share/nvim:${HOME}/.local/lib/python3.10/site-packages:$PATH
 export HIST_STAMPS="%d/%m/%y %T "
 
@@ -115,3 +115,4 @@ export NVM_DIR="$HOME/.nvm"
 # Loading aliases and user defined functions
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 [[ -f "$HOME/.zsh_functions" ]] && source "$HOME/.zsh_functions"
+bindkey -v

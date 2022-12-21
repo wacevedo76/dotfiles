@@ -195,3 +195,7 @@ function ttt() {
     xinput set-prop $device $property 1
   fi;
 }
+
+function listdir() {
+  for dir in *; do if [[ -d $dir ]]; then echo $dir; fi; done
+}
