@@ -164,25 +164,6 @@ function pinknoise() {
        band -n 1200 200 tremolo 20 .1 < /dev/zero
 }
 
-# disable touchpad on thinkpad x250 (using Synaptic driver)
-function dtp() {
-  device=$(xinput | grep Synaptics | rg -o "(id=[0-9]*)" | cut -d= -f2)
-
-  xinput disable $device
-}
-
-# enable touchpad on thinkpad x250 (using Synaptic driver)
-function etp() {
-  device=$(xinput | grep Synaptics | rg -o "(id=[0-9]*)" | cut -d= -f2)
-
-  xinput enable $device
-}
-
-# Simple search through history for search term
-function shistory() {
-  history | sort -rn | grep "$1" | less
-}
-
 # toggle touch to tap on touchpad
 function ttt() {
   device=$(xinput | grep Synaptics | rg -o '(id=[0-9]*)' | cut -d= -f2)
@@ -196,10 +177,29 @@ function ttt() {
   fi;
 }
 
-function listdir() {
-  for dir in *; do if [[ -d $dir ]]; then echo $dir; fi; done
+# disable touchpad on thinkpad x250 (using Synaptic driver)
+function dtp() {
+  device=$(xinput | grep Synaptics | rg -o "(id=[0-9]*)" | cut -d= -f2)
+
+  xinput disable $device
 }
 
+# enable touchpad on thinkpad x250 (using Synaptic driver)
+function etp() {
+  device=$(xinput | grep Synaptics | rg -o "(id=[0-9]*)" | cut -d= -f2) && ttt
+
+  xinput enable $device
+}
+
+# Simple search through history for search term
+function shistory() {
+  history | sort -rn | grep "$1" | less
+}
+
+function listdir() {
+  for dir in *; do if [[ -d $dir ]]; then echo $dir; fi; done
+
+# Function used to bring down the active connection, change dns for specific connection, then bring it back up
 function chdns() {
   currentConnection=$(nmcli -t -f NAME c show --active)
   nmcli c d $currentConnection > /dev/null && nmcli c m ${currentConnection} ipv4.dns $1 && nmcli c u $currentConnection > /dev/null
