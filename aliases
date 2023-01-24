@@ -7,9 +7,13 @@
 # shell aliases
 alias c='clear;'
 alias s='sudo'
-alias cl='c ls -1'
-alias cll='c ls -lF'
-alias cla='c ls -alF'
+alias l='ls -1'
+alias ll='ls -lF'
+alias la='ls -alF'
+alias si='s -i'
+alias cl='c l'
+alias cll='c ll'
+alias cla='c la'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias e='exa --color=always'
@@ -27,28 +31,31 @@ alias am='alsamixer -D default:1'
 alias svim='s vim'
 
 # Common Local file aliases
-alias mycode='cd ${HOME}/code'
-alias mydocs='cd ${HOME}/Documents'
-alias mybooks='cd ${HOME}/Documents/Books'
-alias myitbooks='cd ${HOME}/Documents/Books/IT'
-alias mynotes='cd ${HOME}/Documents/Notes'
-alias mydownloads='cd ${HOME}/Downloads'
-alias myman="cd ${HOME}/Documents/Manuals"
-alias mywa='cd ${HOME}/code/wacevedo76'
-alias mytrain='cd ${HOME}/code/*/training'
+alias mycode='cd $HOME/code'
+alias mydocs='cd $HOME/Documents'
+alias mybooks='cd $HOME/Documents/Books'
+alias myitbooks='cd $HOME/Documents/Books/IT'
+alias mynotes='cd $HOME/Documents/Notes'
+alias mydownloads='cd $HOME/Downloads'
+alias myman="cd $HOME/Documents/Manuals"
+alias mywa='cd $HOME/code/wacevedo76'
+alias mycareer='cd $HOME/Documents/Career'
+alias mytrain='cd $HOME/code/*/training'
 alias myitbooks='cd /home/*/Documents/Books/IT'
-alias mytrainvids='cd ${HOME}/Videos/Training/'
-alias myfullstack='cd ${HOME}/code/*/fullstack-challenges'
-alias myman='cd ${HOME}/Documents/Manuals'
-alias dotfiles='cd ${HOME}/code/*/dotfiles/'
+alias mytrainvids='cd $HOME/Videos/Training/'
+alias myfullstack='cd $HOME/code/*/fullstack-challenges'
+alias myman='cd $HOME/Documents/Manuals'
+alias dotfiles='cd $HOME/code/*/dotfiles/'
 
 # Common Shared directories
 alias films='cd /media/smb/Videos/Films'
 alias series='cd /media/smb/Videos/Series'
-alias smbdocs='cd /media/smb/Documents'
 alias smbanon='cd /media/smb/Anonymous'
 alias smbaudio='cd /media/smb/Audio'
 alias smbbooks='cd /media/smb/Books'
+alias smbcareer='cd /media/smb/Documents/Career'
+alias smbdocs='cd /media/smb/Documents'
+alias smbitbooks='cd /media/smb/Books/it'
 alias smbsoftware='cd /media/smb/Software'
 alias smbtrain='cd /media/smb/Documents/code/training'
 alias smbvids='cd /media/smb/Videos'
@@ -61,13 +68,13 @@ alias smbvidstrpro='cd /media/smb/Videos/Training/IT/Programming'
 alias smbvidstrtool='cd /media/smb/Videos/Training/IT/Tooling'
 alias smbvidstryt='cd /media/smb/Videos/Training/Youtube/IT'
 alias smbvidstrytdevops='cd /media/smb/Videos/Training/Youtube/IT/DevOps'
+alias smbvidstrytlinux='cd /media/smb/Videos/Training/Youtube/IT/Linux'
 alias smbvidstrytnet='cd /media/smb/Videos/Training/Youtube/IT/Networking'
 alias smbvidstrytpro='cd /media/smb/Videos/Training/Youtube/IT/Programming'
 alias smbvidstryttooling='cd /media/smb/Videos/Training/Youtube/IT/Tooling'
-alias smbvidstrytlinux='cd /media/smb/Videos/Training/Youtube/IT/Linux'
 
 # Tmux aliases
-alias t='clear; tmux ls'
+alias t='c tmux ls'
 alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
@@ -75,29 +82,30 @@ alias tnsa='tnsd Main SSH && vimwiki && git pull origin main && tnsd VimWiki && 
 
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
-alias vw2='vim ${HOME}/code/*/vimwiki2/vimwiki2_index.wiki'
-alias vimwiki='cd ${HOME}/code/*/vimwiki'
-alias vwp='cd ${HOME}/code/*/vimwiki && git push origin main'
+alias vw2='vim $HOME/code/*/vimwiki2/vimwiki2_index.wiki'
+alias vimwiki='cd $HOME/code/*/vimwiki'
+alias vwp='cd $HOME/code/*/vimwiki && git push origin main'
 
 # git aliases
-alias gs='clear; git status'
-alias ga='clear; git add'
-alias gc='clear; git commit -m'
-alias gd='clear; git diff'
-alias gl='clear; git log'
+alias gs='c git status'
+alias ga='c git add'
+alias gc='c git commit -m'
+alias gd='c git diff'
+alias gl='c git log'
 
 # Ruby and Rails aliases
 alias brspec='bundle exec rspec -fd'
 alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+alias docked='docker run --rm -it -v ${PWD}:/rails -v ruby-bundle-cache:/bundle -p 3000:3000 ghcr.io/rails/cli'
 
 # Python Django Unit tests
-alias rat='clear; python manage.py test'
-alias rsrvr='clear; python manage.py runserver'
+alias rat='c python manage.py test'
+alias rsrvr='c python manage.py runserver'
 alias mpvplay='mpv --playlist=./playlist &'
 
 # Php aliases
-alias composer="${HOME}/.local/bin/composer/composer.phar"
+alias composer="$HOME/.local/bin/composer/composer.phar"
 alias bright='xrandr --output LVDS1 --brightness'
 
 # neovim aliases
@@ -116,8 +124,8 @@ alias sdocp='s docker-compose'
 alias startpi='cd $HOME/code/Repos/Pihole && s docker-compose up -d && cd'
 
 # Python Django Unit tests
-alias rat='clear; python manage.py test'
-alias rsrvr='clear; python manage.py runserver'
+alias rat='c python manage.py test'
+alias rsrvr='c python manage.py runserver'
 alias mpvplay='mpv --playlist=./playlist'
 alias sctl='s systemctl'
 alias setvi='set -o vi;source ~/.zshrc'
@@ -133,4 +141,6 @@ alias repo='cd ~/code/Repos'
 alias esshcf='vim $HOME/.ssh/config'
 alias rs='xrandr --output DP-2 --mode 1920x1080 --rate 60 --left-of eDP-1 --rotate left'
 alias cqt='copyq toggle'
-alias smbitbooks='cd /media/smb/Books/it'
+alias startall='nmcli c u Matka_Rulez && sudo mount -a && startdoc && startpi && startx'
+alias conmat='nmcli c u Matka_Rulez && s mount -a'
+alias conmatstart='conmat && startx'

@@ -23,6 +23,11 @@ inoremap <C-j> <Esc>/[)}"'\]`>]<cr>:nohl<cr>a
 
 nnoremap <leader>bb :buffers<cr>
 
+nmap <M-Right> :vertical resize +1<cr>
+nmap <M-Left> :vertical resize -1<cr>
+nmap <M-Down> :resize +1<cr>
+nmap <M-Up> :resize -1<cr>
+
 " Auto center text when entering insert mode
 autocmd InsertEnter * norm zz
 
