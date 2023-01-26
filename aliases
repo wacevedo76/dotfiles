@@ -144,3 +144,6 @@ alias cqt='copyq toggle'
 alias startall='nmcli c u Matka_Rulez && sudo mount -a && startdoc && startpi && startx'
 alias conmat='nmcli c u Matka_Rulez && s mount -a'
 alias conmatstart='conmat && startx'
+
+alias yt='yt-dlp'
+alias yt22='yt -f 22'

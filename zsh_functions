@@ -198,6 +198,7 @@ function shistory() {
 
 function listdir() {
   for dir in *; do if [[ -d $dir ]]; then echo $dir; fi; done
+}
 
 # Function used to bring down the active connection, change dns for specific connection, then bring it back up
 function chdns() {
