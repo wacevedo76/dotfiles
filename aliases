@@ -29,6 +29,7 @@ alias startnmmx='nmcli c u Matka_Rulez && s mount -a && startx'
 alias startnwmx='nmcli c u willsPhone && sctl start docker.service && startpi && startx'
 alias am='alsamixer -D default:1'
 alias svim='s vim'
+alias shdns='echo $(sed -n "2p" /etc/resolv.conf | cut -d" " -f2)'
 
 # Common Local file aliases
 alias mycode='cd $HOME/code'
@@ -147,3 +148,4 @@ alias conmatstart='conmat && startx'
 
 alias yt='yt-dlp'
 alias yt22='yt -f 22'
+alias tmain='tnsd Main SSH && vimwiki && tnsd VimWiki && cd && tnsd "The Real World"'

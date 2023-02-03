@@ -102,9 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Source Virtualenvwrapper
-source ${HOME}/.local/bin/virtualenvwrapper.sh
-
 # rbenv setings
 eval "$(rbenv init - zsh)"
 
