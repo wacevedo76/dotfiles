@@ -202,6 +202,6 @@ function listdir() {
 
 # Function used to bring down the active connection, change dns for specific connection, then bring it back up
 function chdns() {
-  currentConnection=$(nmcli -t -f NAME c show --active)
-  nmcli c d $currentConnection > /dev/null && nmcli c m ${currentConnection} ipv4.dns $1 && nmcli c u $currentConnection > /dev/null
+  currentConnection=$(nmcli -t -f NAME,DEVICE c show --active | grep wlp3s0 | cut -d: -f1)
+  nmcli c d $currentConnection && nmcli c m $currentConnection ipv4.dns $1 && nmcli c u $currentConnection
 }
