@@ -10,7 +10,6 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   use 'tpope/vim-fireplace'
   use 'tpope/vim-salve'
-  use 'Olical/conjure'
   use 'dmac/vim-cljfmt'
   use 'clojure-vim/async-clj-omni'
 
@@ -31,17 +30,15 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind.nvim'
 
 -- ChatGPT
-  use({
-    "jackMort/ChatGPT.nvim",
-      config = function()
-        require("chatgpt").setup({
-          -- optional configuration
-        })
-      end,
-      requires = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
-  })
+-- use({
+--   "jackMort/ChatGPT.nvim",
+--     config = function()
+--       require("chatgpt").setup()
+--     end,
+--     requires = {
+--       "MunifTanjim/nui.nvim",
+--       "nvim-lua/plenary.nvim",
+--       "nvim-telescope/telescope.nvim"
+--     }
+-- })
 end)

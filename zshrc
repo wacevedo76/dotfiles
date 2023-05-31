@@ -1,11 +1,15 @@
 
 # If you come from bash you might have to change your $PATH.
-export EDITOR=vim VISUAL=vi
+export EDITOR=vim VISUAL=vim
 export PATH=${HOME}/bin:${HOME}/.local/bin:${HOME}/.rbenv/bin:${HOME}/.local/share/nvim:${HOME}/.local/lib/python3.10/site-packages:$PATH
 export HIST_STAMPS="%d/%m/%y %T "
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -116,5 +120,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # Open AI GPT-3 API key reference
 [[ -f "$HOME/.config/.credentials/chatgpt" ]] && export OPENAI_API_KEY=$(cat "$HOME/.config/.credentials/chatgpt")
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export OPENAI_API_KEY="$( < $HOME/.config/.credentials/chatgpt )"
 
 bindkey -v

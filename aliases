@@ -16,10 +16,15 @@ alias cll='c ll'
 alias cla='c la'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias sctl='s systemctl'
+alias sctlstart='sctl start'
+alias sctlstop='sctl stop'
+alias sctlstat='sctl status'
 alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
 alias ealiases='dotfiles && vim aliases'
 alias ezshfn='dotfiles && vim zsh_functions'
 alias ezshrc='dotfiles && vim zshrc'
+alias esshconf='vim $HOME/.ssh/config'
 alias myown='s chown -R ${USER}:${USER} ./*'
 alias rless='less -r'
 alias sranger='s ranger .'
@@ -29,6 +34,9 @@ alias startnwmx='nmcli c u willsPhone && sctl start docker.service && startpi &&
 alias am='alsamixer -D default:1'
 alias svim='s vim'
 alias shdns='echo $(sed -n "2p" /etc/resolv.conf | cut -d" " -f2)'
+
+# xdg
+alias xdgs='xdg-settings'
 
 # Common Local file aliases
 alias myaudio='cd /home/wacevedo/Audio'
@@ -60,6 +68,7 @@ alias smbsoftware='cd /media/smb/Software'
 alias smbtrain='cd /media/smb/Documents/code/training'
 alias smbvids='cd /media/smb/Videos'
 alias smbvidstr='cd /media/smb/Videos/Training'
+alias smbvidstrit='cd /media/smb/Videos/Training/IT'
 alias smbvidstrcerts='cd /media/smb/Videos/Training/IT/Certification'
 alias smbvidstrcompsci='cd /media/smb/Videos/Training/IT/CompSci'
 alias smbvidstrdesign='cd /media/smb/Videos/Training/IT/Design'
@@ -81,7 +90,7 @@ alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
 alias tnsa='tnsd Main SSH && vimwiki && git pull origin main && tnsd VimWiki && cd'
-alias tmain='tnsd Main SSH && vimwiki && tnsd VimWiki && cd && tnsd "The Real World"'
+alias tmain='tnsd Main SSH && vimwiki && tnsd VimWiki && cd'
 
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
@@ -122,6 +131,8 @@ alias ehosts='s vim /etc/hosts'
 
 # Docker aliases
 alias startdoc='sctl start docker.service'
+alias stopdoc='sctl stop docker.service'
+
 alias sdoc='s docker'
 alias sdocp='s docker-compose'
 alias startpi='cd $HOME/code/Repos/Pihole && s docker-compose up -d && cd'
@@ -130,7 +141,6 @@ alias startpi='cd $HOME/code/Repos/Pihole && s docker-compose up -d && cd'
 alias rat='c python manage.py test'
 alias rsrvr='c python manage.py runserver'
 alias mpvplay='mpv --playlist=./playlist'
-alias sctl='s systemctl'
 alias setvi='set -o vi;source ~/.zshrc'
 
 # Clojure aliases
@@ -140,9 +150,10 @@ alias cljnrepl='clj -M:nREPL -m nrepl.cmdline'
 alias mutt=neomutt
 alias irc=irssi
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
-alias repo='cd ~/code/Repos'
+alias repos='cd ~/code/Repos'
 alias esshcf='vim $HOME/.ssh/config'
-alias rs='xrandr --output DP-2 --mode 1920x1080 --rate 60 --left-of eDP-1 --rotate left && feh --bg-scal ~/Pictures/Wallpapers/lighthouse.jpg ~/Pictures/Wallpapers/lighthouse.jpg'
+alias rson='xrandr --output DP-2 --mode 1920x1080 --rate 60 --left-of eDP-1 --rotate left && feh --bg-scal ~/Pictures/Wallpapers/Landscape/Landscape-Mountains.jpg ~/Pictures/Wallpapers/Portrait/Portrait-city.jpg'
+alias rsoff='xrandr --output DP-2 --off'
 alias cqt='copyq toggle'
 alias startall='nmcli c u Matka_Rulez && sudo mount -a && startdoc && startpi && startx'
 alias conma='nmcli c u Matka_Rulez && s mount -a'

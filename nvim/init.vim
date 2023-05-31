@@ -1,5 +1,4 @@
 lua << EOF
---  require('chatGPT-config')
   require('colorschemes-config.gruvbox')
   require('lsp-config.language-servers')
   require('lsp-config.nvim-cmp')
@@ -9,6 +8,7 @@ lua << EOF
   require('packer-config')
   require('settings')
   require('treesitter-config')
+  -- require('chatGPT-config')
 EOF
 
 nnoremap <F7> gg=<C-o><C-o>

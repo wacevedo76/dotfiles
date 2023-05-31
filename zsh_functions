@@ -21,18 +21,7 @@ function stopwatch(){
 
 # opens saved manpages via session files which contain folds
 function vman(){
-  if [[ -e ${HOME}/Documents/Manuals/${1} ]]; then
-    if [[ -e ${HOME}/Documents/Manuals/${1}/${1}-session ]]; then
-      vim -R -S ${HOME}/Documents/Manuals/${1}/${1}-session
-      return 0
-    else
-      echo "File Exists, but it's vim session doesn't"
-      return 1
-    fi
-  else
-    echo "File does not exist"
-    return 1
-  fi
+  vim <(man $1)
 }
 
 # removes all vim swapfiles from swap directory
@@ -49,8 +38,8 @@ function mkcd {
 
 # Enter training subdirectory
 function train() {
-  if [[ -d ${HOME}code/wacevedo76/training/${1} ]]; then
-    cd ${HOME}code/wacevedo76/training/${1}
+  if [[ -d ${HOME}/code/wacevedo76/training/${1} ]]; then
+    cd ${HOME}/code/wacevedo76/training/${1}
   else
     echo "That directory doesn't exists."
     return 1
@@ -110,7 +99,7 @@ function tsn() {
 # Make simple playlist for mpv
 function simplePlayList(){
   for file in *; do
-    if [[ $file == *.mkv ]]; then
+    if [[ $file == *.mkv ]] || [[ $file == *.mp4 ]] || [[ $file == *.mp3 ]]; then
       echo "${file}" >> ./playlist;
     fi;
   done;
