@@ -1,7 +1,7 @@
 
 # If you come from bash you might have to change your $PATH.
 export EDITOR=vim VISUAL=vim
-export PATH=${HOME}/bin:${HOME}/.local/bin:${HOME}/.rbenv/bin:${HOME}/.local/share/nvim:${HOME}/.local/lib/python3.10/site-packages:$PATH
+export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.rbenv/bin:${HOME}/.local/share/nvim:${HOME}/.local/lib/python3.10/site-packages:$PATH"
 export HIST_STAMPS="%d/%m/%y %T "
 
 # Path to your oh-my-zsh installation.
@@ -113,6 +113,10 @@ eval "$(rbenv init - zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# npm settings
+export NPM_GLOBAL="$HOME/.npm"
+export PATH="$NPM_GLOBAL/bin:$PATH"
 
 # Loading aliases and user defined functions
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
