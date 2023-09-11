@@ -4,90 +4,172 @@
 #  \ V  V | (_| | (_|  __/\ V |  __| (_| | (_) | | (_| | | | (_| \__ |  __\__ \
 #   \_/\_/ \__,_|\___\___| \_/ \___|\__,_|\___/   \__,_|_|_|\__,_|___/\___|___/
 
-# Dotfiles alias
-alias dotfiles='cd ${HOME}/code/*/dotfiles/'
+# shell aliases
+alias c='clear;'
+alias s='sudo'
+alias l='ls -1h'
+alias ll='ls -lhF'
+alias la='ls -AlhF'
+alias si='s -i'
+alias cl='c l'
+alias cll='c ll'
+alias cla='c la'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias sctl='s systemctl'
+alias sctlstart='sctl start'
+alias sctlstop='sctl stop'
+alias sctlstat='sctl status'
+alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
+alias ealiases='dotfiles && vim aliases'
+alias ezshfn='dotfiles && vim zsh_functions'
+alias ezshrc='dotfiles && vim zshrc'
+alias esshconf='vim $HOME/.ssh/config'
+alias myown='s chown -R ${USER}:${USER} ./*'
+alias rless='less -r'
+alias sranger='s ranger .'
+alias sz='source /home/wacevedo/.zshrc'
+alias startnmmx='nmcli c u Matka_Rulez && s mount -a && startx'
+alias startnwmx='nmcli c u willsPhone && sctl start docker.service && startpi && startx'
+alias am='alsamixer'
+alias svim='s vim'
+alias shdns='echo $(sed -n "2p" /etc/resolv.conf | cut -d" " -f2)'
+
+alias h='history | sort -rn'
+
+# xdg
+alias xdgs='xdg-settings'
 
 # Common Local file aliases
-alias mycode='cd ${HOME}/code'
-alias mydocs='cd ${HOME}/Documents'
-alias mybooks='cd ${HOME}/Documents/Books'
-alias myitbooks='cd ${HOME}/Documents/Books/IT'
-alias mynotes='cd ${HOME}/Documents/Notes'
-alias mydownloads='cd ${HOME}/Downloads'
-alias myman="cd ${HOME}/Documents/Manuals"
-alias mywa='cd ${HOME}/code/wacevedo76'
-alias mytrain='cd ${HOME}/code/wacevedo76/training'
-alias mytrainvids='cd ${HOME}/Videos/Training/'
-alias myfullstack='cd ${HOME}/code/*/fullstack-challenges'
-alias myman='cd ${HOME}/Documents/Manuals'
+alias myaudio='cd /home/wacevedo/Audio'
+alias mycode='cd $HOME/code'
+alias mydocs='cd $HOME/Documents'
+alias mybooks='cd $HOME/Documents/Books'
+alias myitbooks='cd $HOME/Documents/Books/IT'
+alias mynotes='cd $HOME/Documents/Notes'
+alias mydownloads='cd $HOME/Downloads'
+alias myman="cd $HOME/Documents/Manuals"
+alias mywa='cd $HOME/code/wacevedo76'
+alias mycareer='cd $HOME/Documents/Career'
+alias mytrain='cd $HOME/code/*/training'
+alias myitbooks='cd /home/*/Documents/Books/IT'
+alias mytrainvids='cd $HOME/Videos/Training/'
+alias myfullstack='cd $HOME/code/*/fullstack-challenges'
+alias myman='cd $HOME/Documents/Manuals'
 
 # Common Shared directories
+alias films='cd /media/smb/Videos/Films'
+alias series='cd /media/smb/Videos/Series'
 alias smbanon='cd /media/smb/Anonymous'
 alias smbaudio='cd /media/smb/Audio'
 alias smbbooks='cd /media/smb/Books'
+alias smbcareer='cd /media/smb/Documents/Career'
+alias smbdocs='cd /media/smb/Documents'
+alias smbitbooks='cd /media/smb/Books/it'
 alias smbsoftware='cd /media/smb/Software'
+alias smbtrain='cd /media/smb/Documents/code/training'
 alias smbvids='cd /media/smb/Videos'
 alias smbvidstr='cd /media/smb/Videos/Training'
-alias smbvidstrytdevops='/media/smb/Videos/Training/Youtube/IT/DevOps'
-alias smbvidstrytpro='/media/smb/Videos/Training/Youtube/IT/Programming'
-alias smbvidstrytnet='/media/smb/Videos/Training/Youtube/IT/Networking'
+alias smbvidstrit='cd /media/smb/Videos/Training/IT'
+alias smbvidstrcerts='cd /media/smb/Videos/Training/IT/Certification'
+alias smbvidstrcompsci='cd /media/smb/Videos/Training/IT/CompSci'
+alias smbvidstrdesign='cd /media/smb/Videos/Training/IT/Design'
+alias smbvidstrdevops='cd /media/smb/Videos/Training/IT/DevOps'
+alias smbvidstrpro='cd /media/smb/Videos/Training/IT/Programming'
+alias smbvidstrtool='cd /media/smb/Videos/Training/IT/Tooling'
 
-# shell aliases
-alias ..='cd ..'
-alias ...='cd ../..'
-alias e='exa --color=always'
-alias rless='less -r'
+alias smbvidstryt='cd /media/smb/Videos/Training/Youtube'
+alias smbvidstrytit='cd /media/smb/Videos/Training/Youtube/IT'
+alias smbvidstrytdevops='cd /media/smb/Videos/Training/Youtube/IT/DevOps'
+alias smbvidstrytlinux='cd /media/smb/Videos/Training/Youtube/IT/Linux'
+alias smbvidstrytnet='cd /media/smb/Videos/Training/Youtube/IT/Networking'
+alias smbvidstrytpro='cd /media/smb/Videos/Training/Youtube/IT/Programming'
+alias smbvidstryttooling='cd /media/smb/Videos/Training/Youtube/IT/Tooling'
 
-# tmux aliases
-alias t='clear; tmux ls'
+# Tmux aliases
+alias t='c tmux ls'
 alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
-
-# neovim aliases
-alias vim=/usr/local/bin/nvim
-alias v='nvim $(fzf)'
-alias lswap='ll ~/.local/share/nvim/swap'
-alias gswap='cd ~/.local/share/nvim/swap'
-alias rmswap='rm -rf ~/.local/share/nvim/swap/*'
-alias virc='vim ${HOME}/.config/nvim/init.vim'
+alias tnsa='tnsd Main SSH && vimwiki && git pull origin main && tnsd VimWiki && cd'
+alias tmain='tnsd Main SSH && vimwiki && tnsd VimWiki && cd'
 
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
-alias vw2='vim ${HOME}/code/wacevedo76/vimwiki2/vimwiki2_index.wiki'
-alias vimwiki='cd ${HOME}/code/wacevedo76/vimwiki'
-alias vwp='cd ${HOME}/code/wacevedo76/vimwiki && git push origin main'
+alias vw2='vim $HOME/code/*/vimwiki2/vimwiki2_index.wiki'
+alias vimwiki='cd $HOME/code/*/vimwiki'
+alias vwp='cd $HOME/code/*/vimwiki && git push origin main'
 
 # git aliases
-alias gs='clear; git status'
-alias ga='clear; git add'
-alias gc='clear; git commit -m'
-alias gd='clear; git diff'
-alias gl='clear; git log'
+alias gs='c git status'
+alias ga='c git add'
+alias gc='c git commit -m'
+alias gd='c git diff'
+alias gl='c git log'
 
 # Ruby and Rails aliases
 alias brspec='bundle exec rspec -fd'
 alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+alias docked='docker run --rm -it -v ${PWD}:/rails -v ruby-bundle-cache:/bundle -p 3000:3000 ghcr.io/rails/cli'
 
 # Python Django Unit tests
-alias rat='clear; python manage.py test'
-alias rsrvr='clear; python manage.py runserver'
+alias rat='c python manage.py test'
+alias rsrvr='c python manage.py runserver'
 alias mpvplay='mpv --playlist=./playlist &'
 
 # Php aliases
-alias composer="${HOME}/.local/bin/composer/composer.phar"
+alias composer="$HOME/.local/bin/composer/composer.phar"
 alias bright='xrandr --output LVDS1 --brightness'
+
+# neovim aliases
+alias vim='/usr/local/bin/nvim'
+alias v='nvim $(fzf)'
+alias lswap='ll ~/.local/share/nvim/swap'
+alias gswap='cd ~/.local/share/nvim/swap'
+alias rmswap='rm -rf $HOME/.local/share/nvim/swap/* && rm -rf $HOME/.local/state/nvim/swap/*'
+alias evimrc='dotfiles && cd nvim && vim init.vim'
+alias ehosts='s vim /etc/hosts'
+
+# Docker aliases
+alias startdoc='sctl start docker.service'
+alias stopdoc='sctl stop docker.service'
+
+alias sdoc='s docker'
+alias sdocp='s docker-compose'
+alias startpi='cd $HOME/code/Repos/Pihole && s docker-compose up -d && cd'
+
+# Python Django Unit tests
+alias rat='c python manage.py test'
+alias rsrvr='c python manage.py runserver'
+alias mpvplay='mpv --playlist=./playlist'
+alias setvi='set -o vi;source ~/.zshrc'
+
+# Clojure aliases
+alias cljnrepl='clj -M:nREPL -m nrepl.cmdline'
 
 # misc aliases
 alias mutt=neomutt
 alias irc=irssi
-alias njs8='~/.local/node-v8.17.0-linux-x64/bin/node'
-alias ema='extramonitor.sh attach'
-alias emd='extramonitor.sh detach'
-alias setvi='set -o vi'
-
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
-alias am='alsamixer -c 1'
-alias sctl='sudo systemctl'
-alias srczsh='source  ${HOME}/.zshrc'
+alias repos='cd ~/code/Repos'
+alias esshcf='vim $HOME/.ssh/config'
+alias rson='xrandr --output HDMI-2 --mode 1920x1080 --rate 60 --left-of eDP-1 --rotate left && feh --bg-scal ~/Pictures/Wallpapers/Landscape/Landscape-Mountains.jpg ~/Pictures/Wallpapers/Portrait/Portrait-city.jpg'
+alias rsoff='xrandr --output DP-2 --off'
+alias cqt='copyq toggle'
+alias startall='nmcli c u Matka_Rulez && sudo mount -a && startdoc && startpi && startx'
+alias conma='nmcli c u Matka_Rulez && s mount -a'
+alias cms='conma && startx'
+
+alias yt='yt-dlp'
+alias yt22='yt -f 22'
+alias ship='ip -o a s wlp3s0 | grep "\sinet\s" | tr -s " " | cut -d" " -f4'
+alias mycertbooks='myitbooks && cd Certs/Linux/RedHat && ranger .'
+alias homereset='nmcli c d Matka_Rulez && nmcli c u Matka_Rulez'
+alias shnt='c ship && shdns'
+
+alias rhcsabook='myitbooks && cd Certs/Linux/RedHat && zathura ./Red\ Hat\ RHCSA\ 8\ Cert\ Guide\ EX200\ -\ 2nd\ Edition.pdf &'
+alias smbvidstrnet='cd /media/smb/Videos/Training/IT/Networking'
+alias binaural='mpv --loop /home/wacevedo/Audio/pure_40_HZ_Binaural_Beats-for_focus_memory.mp3 &'
+alias netstudy='cd "/media/smb/Videos/Training/IT/Networking/The Complete IP Networks Course From Zero to Expert!/[TutsNode.net] - The Complete IP Networks Course From Zero to Expert!"'
+alias learnpolish='cd /home/wacevedo/Documents/Books/Language/Polish && ranger'

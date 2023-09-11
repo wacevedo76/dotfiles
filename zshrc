@@ -1,10 +1,15 @@
+
 # If you come from bash you might have to change your $PATH.
-export EDITOR=vim
-export PATH=${HOME}/bin:${HOME}/.local/bin:${HOME}/.rbenv/bin:${HOME}/.local/share/nvim:$PATH
+export EDITOR=vim VISUAL=vim
+export PATH="${HOME}/bin:${HOME}/.local/bin:${HOME}/.rbenv/bin:${HOME}/.local/share/nvim:${HOME}/.local/lib/python3.10/site-packages:$PATH"
 export HIST_STAMPS="%d/%m/%y %T "
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -102,9 +107,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Source Virtualenvwrapper
-source ${HOME}/.local/bin/virtualenvwrapper.sh
-
 # rbenv setings
 eval "$(rbenv init - zsh)"
 
@@ -112,6 +114,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# npm settings
+export NPM_GLOBAL="$HOME/.npm"
+export PATH="$NPM_GLOBAL/bin:$PATH"
+
 # Loading aliases and user defined functions
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 [[ -f "$HOME/.zsh_functions" ]] && source "$HOME/.zsh_functions"
+
+# Open AI GPT-3 API key reference
+[[ -f "$HOME/.config/.credentials/chatgpt" ]] && export OPENAI_API_KEY=$(cat "$HOME/.config/.credentials/chatgpt")
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export OPENAI_API_KEY="$( < $HOME/.config/.credentials/chatgpt )"
+
+bindkey -v
