@@ -1,0 +1,49 @@
+set nu rnu
+syntax on
+set autoindent smartindent expandtab tabstop=2 shiftwidth=2
+
+let mapleader = ' '
+
+nnoremap <leader>bb :buffers<cr>
+
+inoremap jk <esc>
+
+inoremap (( ()<esc>:let leavechar=")"<cr>i
+inoremap [[ []<esc>:let leavechar="]"<cr>i
+inoremap {{ {}<esc>:let leavechar="}"<cr>i
+inoremap '' ''<esc>:let leavechar="'"<cr>i
+inoremap `` ``<esc>:let leavechar="`"<cr>i
+inoremap "" ""<esc>:let leavechar='"'<cr>i
+inoremap 3" """"""<esc>hhi
+inoremap <C-j> <esc>/[)}"'\]`>]<cr>:nohl<cr>a
+
+nnoremap <F7> gg=<C-o><C-o>
+
+nnoremap <space> :nohl<bar>:echo<cr>
+nnoremap <leader><Tab> :NvimTreeToggle<CR>
+nnoremap <leader>ig :IndentGuidesToggle<CR>
+nnoremap <leader>tt :set nu! rnu!<CR>
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+nnoremap tn :tabnew<Space>
+nnoremap te :tabe<Space>
+nnoremap tk :tabnext<cr>
+nnoremap tj :tabprev<cr>
+nnoremap th :tabfirst<cr>
+nnoremap tl :tablast<cr>
+nnoremap tm :tabm<Space>
+nnoremap ht :tab help<Space>
+nnoremap bk :bnext<cr>
+nnoremap bj :bprevious<cr>
+nnoremap bl :blast<cr>
+nnoremap bh :bfirst<cr>
+nnoremap <leader>ai mzgg=G`z
+
+nnoremap <leader>bb :buffers<cr>
+
+autocmd InsertEnter * norm zz
+
+autocmd BufWritePre * :%s/\s\+$//e
