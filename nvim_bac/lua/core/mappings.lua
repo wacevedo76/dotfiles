@@ -25,7 +25,6 @@ vim.keymap.set('i', '""', '""<esc>i')
 vim.keymap.set('n', '<F7>', 'gg=<C-o><C-o>')
 
 vim.keymap.set('n', '<leader>bb', ':buffers<cr>')
-vim.keymap.set('n', '<leader><tab>', ':NvimTreeToggle<cr>')
 -- vim.keymap.set('n', '<leader>ig', ':IndentGuidesToggle<CR>')
 vim.keymap.set('n', '<leader>tt', ':set nu! rnu!<CR>')
 vim.keymap.set('n', '<leader>ww', ':set wrap!<CR>')

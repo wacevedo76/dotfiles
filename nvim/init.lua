@@ -1,2 +1,2 @@
 require("core.mappings")
-require("lazymain")
+require("core.lazy_bootstrap")
