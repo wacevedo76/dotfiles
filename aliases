@@ -21,7 +21,7 @@ alias sctlstart='sctl start'
 alias sctlstop='sctl stop'
 alias sctlstat='sctl status'
 alias dotfiles='cd $HOME/code/wacevedo76/dotfiles/'
-alias ealiases='dotfiles && vim aliases'
+alias ea='dotfiles && vim aliases'
 alias ezshfn='dotfiles && vim zsh_functions'
 alias ezshrc='dotfiles && vim zshrc'
 alias esshconf='vim $HOME/.ssh/config'
@@ -33,7 +33,6 @@ alias startnmmx='nmcli c u Matka_Rulez && s mount -a && startx'
 alias startnwmx='nmcli c u willsPhone && sctl start docker.service && startpi && startx'
 alias am='alsamixer'
 alias svim='s vim'
-alias shdns='echo $(sed -n "2p" /etc/resolv.conf | cut -d" " -f2)'
 
 alias h='history | sort -rn'
 
@@ -41,6 +40,8 @@ alias h='history | sort -rn'
 alias xdgs='xdg-settings'
 
 # Common Local file aliases
+alias repos='cd $HOME/code/Repos'
+alias pictures='cd $HOME/Pictures'
 alias myaudio='cd /home/wacevedo/Audio'
 alias mycode='cd $HOME/code'
 alias mydocs='cd $HOME/Documents'
@@ -77,6 +78,9 @@ alias smbvidstrdesign='cd /media/smb/Videos/Training/IT/Design'
 alias smbvidstrdevops='cd /media/smb/Videos/Training/IT/DevOps'
 alias smbvidstrpro='cd /media/smb/Videos/Training/IT/Programming'
 alias smbvidstrtool='cd /media/smb/Videos/Training/IT/Tooling'
+alias smbvidstrfitness='cd /media/smb/Videos/Training/Fitness'
+alias smbvidstrpd='cd /media/smb/Videos/Training/Personal\ Development'
+alias smbvidstrproductivity='cd /media/smb/Videos/Training/Productivity'
 
 alias smbvidstryt='cd /media/smb/Videos/Training/Youtube'
 alias smbvidstrytit='cd /media/smb/Videos/Training/Youtube/IT'
@@ -145,6 +149,15 @@ alias rsrvr='c python manage.py runserver'
 alias mpvplay='mpv --playlist=./playlist'
 alias setvi='set -o vi;source ~/.zshrc'
 
+# Networking aliases
+alias ship='ip -o a s wlp3s0 | grep "\sinet\s" | tr -s " " | cut -d" " -f4'
+alias shdns='echo $(sed -n "2p" /etc/resolv.conf | cut -d" " -f2)'
+alias shnt='c ship && shdns'
+
+# Screen aliases
+alias rson='xrandr --output HDMI-2 --mode 1920x1080 --rate 60 --left-of eDP-1 --rotate left && feh --bg-scal ~/Pictures/Wallpapers/dark_night_landscape.jpg ~/Pictures/Wallpapers/LOA_portrait.png'
+alias rsoff='xrandr --output HDMI-2 --off'
+
 # Clojure aliases
 alias cljnrepl='clj -M:nREPL -m nrepl.cmdline'
 
@@ -152,21 +165,17 @@ alias cljnrepl='clj -M:nREPL -m nrepl.cmdline'
 alias mutt=neomutt
 alias irc=irssi
 alias tomp3='ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";'
-alias repos='cd ~/code/Repos'
 alias esshcf='vim $HOME/.ssh/config'
-alias rson='xrandr --output HDMI-2 --mode 1920x1080 --rate 60 --left-of eDP-1 --rotate left && feh --bg-scal ~/Pictures/Wallpapers/dark_night_landscape.jpg ~/Pictures/Wallpapers/dark_portrait.jpg'
-alias rsoff='xrandr --output HDMI-2 --off'
 alias cqt='copyq toggle'
 alias startall='nmcli c u Matka_Rulez && sudo mount -a && startdoc && startpi && startx'
 alias conma='nmcli c u Matka_Rulez && s mount -a'
 alias cms='conma && startx'
+alias ff='flameshot launcher'
 
 alias yt='yt-dlp'
 alias yt22='yt -f 22'
-alias ship='ip -o a s wlp3s0 | grep "\sinet\s" | tr -s " " | cut -d" " -f4'
 alias mycertbooks='myitbooks && cd Certs/Linux/RedHat && ranger .'
 alias homereset='nmcli c d Matka_Rulez && nmcli c u Matka_Rulez'
-alias shnt='c ship && shdns'
 
 alias rhcsabook='zathura "$HOME/Documents/Books/IT/Certifications/OS/Linux/RedHat/Red Hat RHCSA 8 Cert Guide EX200 - 2nd Edition.pdf"'
 alias smbvidstrnet='cd /media/smb/Videos/Training/IT/Networking'
@@ -175,3 +184,4 @@ alias netstudy='cd "/media/smb/Videos/Training/IT/Networking/The Complete IP Net
 alias learnpolish='cd /home/wacevedo/Documents/Books/Language/Polish && ranger'
 alias myprojects='cd /home/wacevedo/code/Projects'
 alias setlua="export LUA_DIR=/usr/bin/lua"
+alias sources='cd /home/wacevedo/code/Sources'
