@@ -5,7 +5,7 @@ function countdown(){
      echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
      sleep 0.1
    done
-   mpv --loop "$HOME/Audio/countdown_alarm.mp3"
+   mpv --loop "$HOME/Audio/Sounds/alarm01.mp3"
    return 0
 }
 
@@ -194,3 +194,7 @@ function chdns() {
   currentConnection=$(nmcli -t -f NAME,DEVICE c show --active | grep wlp3s0 | cut -d: -f1)
   nmcli c d $currentConnection && nmcli c m $currentConnection ipv4.dns $1 && nmcli c u $currentConnection
 }
+function playall() {
+  for dir in *; do cd $dir && mpvplay && cd ..;done
+}
+

@@ -9,11 +9,12 @@
       lazypath,
     })
   end
+
   vim.opt.rtp:prepend(lazypath)
-  
   require("lazy").setup(
     {
       {import = "lspcore"},
       {import = "plugins"}
     }
   )
+

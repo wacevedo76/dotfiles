@@ -92,11 +92,12 @@ alias smbvidstryttooling='cd /media/smb/Videos/Training/Youtube/IT/Tooling'
 
 # Tmux aliases
 alias t='c tmux ls'
+alias ct='c t'
 alias tns='tmux new -s'
 alias tat='tmux a -t'
 alias tks='tmux kill-session -t'
 alias tnsa='tnsd Main SSH && vimwiki && git pull origin main && tnsd VimWiki && cd'
-alias tmain='tnsd Main SSH && vimwiki && tnsd VimWiki && cd'
+alias tmain='tnsd Main SSH && vimwiki && tnsd VimWiki && cd && tnsd Audio'
 
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
@@ -117,6 +118,8 @@ alias rails-db-refresh='rails db:drop && rails db:create && rails db:migrate'
 alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 alias docked='docker run --rm -it -v ${PWD}:/rails -v ruby-bundle-cache:/bundle -p 3000:3000 ghcr.io/rails/cli'
 
+# Python aliases
+alias activate='source ./bin/activate'
 # Python Django Unit tests
 alias rat='c python manage.py test'
 alias rsrvr='c python manage.py runserver'

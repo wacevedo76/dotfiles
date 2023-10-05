@@ -127,4 +127,5 @@ export PATH="$NPM_GLOBAL/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export OPENAI_API_KEY=$(cat $HOME/.config/.credentials/chatgpt)
 bindkey -v
