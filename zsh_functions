@@ -194,6 +194,13 @@ function chdns() {
   currentConnection=$(nmcli -t -f NAME,DEVICE c show --active | grep wlp3s0 | cut -d: -f1)
   nmcli c d $currentConnection && nmcli c m $currentConnection ipv4.dns $1 && nmcli c u $currentConnection
 }
+
+
+function netreset() {
+  currentConnection=$(nmcli -t -f NAME,DEVICE c show --active | grep wlp3s0 | cut -d: -f1)
+  nmcli c d $currentConnection && nmcli c u $currentConnection
+}
+
 function playall() {
   for dir in *; do cd $dir && mpvplay && cd ..;done
 }
