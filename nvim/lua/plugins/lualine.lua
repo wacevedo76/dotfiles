@@ -1,10 +1,8 @@
 return {
   'nvim-lualine/lualine.nvim',
-  lazy = false,
-  dependencies  = {
-    'nvim-tree/nvim-web-devicons'
-  },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
+    -- LuaLine settings/keymaps
     require('lualine').setup {
       options = {
         icons_enabled = true,
