@@ -23,6 +23,7 @@ vim.keymap.set('i', '{{', '{}<esc>:let leavechar="}"<cr>i')
 vim.keymap.set('i', "''", "''<esc>:let leavechar='\"'<cr>i")
 vim.keymap.set('i', '``', '``<esc>:let leavechar="`"<cr>i')
 vim.keymap.set('i', '""', '""<esc>i')
+vim.keymap.set('n', '<esc>', ':noh<cr>')
 -- vim.cmd('inoremap <C-j> <esc>/[)}\"'\]`>]<cr>:nohl<cr>a')
 -- vim.keymap.set('i', '<C-j>', "<esc>[)}\"']`>]<cr>:nohl<cr>a")
 
