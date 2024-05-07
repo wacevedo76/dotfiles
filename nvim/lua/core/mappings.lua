@@ -1,6 +1,7 @@
  -- Map leader
 vim.g.mapleader = ' '
 
+vim.g.mkdp_browser = '/usr/bin/vivaldi-stable'
 vim.o.syntax = 'on'
 vim.o.autoindent = true
 vim.o.smartindent = true
@@ -29,7 +30,6 @@ vim.keymap.set('n', '<esc>', ':noh<cr>')
 
 vim.keymap.set('n', '<F7>', 'gg=<C-o><C-o>')
 
--- vim.keymap.set('n', '<leader>ig', ':IndentGuidesToggle<CR>')
 vim.keymap.set('n', '<leader>tt', ':set nu! rnu!<CR>')
 vim.keymap.set('n', '<leader>ww', ':set wrap!<CR>')
 vim.keymap.set('n', '<c-h>', '<c-w>h')
@@ -46,7 +46,6 @@ vim.keymap.set('n', 'th', ':tabfirst<cr>')
 vim.keymap.set('n', 'tl', ':tablast<cr>')
 vim.keymap.set('n', 'tm', ':tabm<Space>')
 vim.keymap.set('n', '<leader>h', ':help<Space>')
--- vim.keymap.set('n', 'th', ':tab help<Space>')
 vim.keymap.set('n', 'bk', ':bnext<cr>')
 vim.keymap.set('n', 'bj', ':bprevious<cr>')
 vim.keymap.set('n', 'bl', ':blast<cr>')
@@ -102,6 +101,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
   end,
 })
+
+-- Markdown-preview settings
+vim.keymap.set('n', '<leader>mp', ':MarkdownPreview<cr>', {})
 
 -- autocmd InsertEnter * norm zz
 
