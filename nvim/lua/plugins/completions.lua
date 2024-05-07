@@ -13,6 +13,9 @@ return {
   -- LuaSnip
   {
     "L3MON4D3/LuaSnip",
+
+    version = "v2.*",
+    build = "make install_jsregexp",
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets"
@@ -23,13 +26,15 @@ return {
     "hrsh7th/nvim-cmp",
     config = function()
     	local cmp = require("cmp")
-      require("luasnip.loaders.from_vscode").lazy_load()
+      local luasnip = require("luasnip")
+      -- require("luasnip.loaders.from_vscode").lazy_load() # this line was part of the issue with emmet_ls
 
     	cmp.setup({
     		snippet = {
     			-- REQUIRED - you must specify a snippet engine
     			expand = function(args)
-    				-- require("luasnip").lsp_expand(args.body)
+    				-- require("luasnip").lsp_expand(args.body)   # this line was part of the issue with emmet_ls
+    				require("luasnip").lsp_expand(args.body)
             luasnip.lsp_expand(args.body)
     			end,
     		},

@@ -11,21 +11,21 @@ return {
     lazy = false,
     opts = {
       auto_install = true
-    }
-    -- config = function()
-    --    require("mason-lspconfig").setup({
-    --     ensure_installed = {
-    --       "lua_ls",
-    --       "bashls",
-    --       "html",
-    --       "emmet_ls",
-    --       "solargraph",
-    --       "tsserver",
-    --       "jsonls",
-    --       "pyright"
-    --     }
-    --   })
-    -- end
+    },
+    config = function()
+       require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "bashls",
+          "html",
+          "emmet_ls",
+          "solargraph",
+          "tsserver",
+          "jsonls",
+          "pyright"
+        }
+      })
+    end
   },
   {
     "neovim/nvim-lspconfig",
