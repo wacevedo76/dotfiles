@@ -158,7 +158,7 @@ alias shdns='echo $(sed -n "2p" /etc/resolv.conf | cut -d" " -f2)'
 alias shnt='c ship && shdns'
 
 # Screen aliases
-alias rson='xrandr --output HDMI-2 --mode 1920x1080 --rate 60 --left-of eDP-1 --rotate left && feh --bg-scal ~/Pictures/Wallpapers/dark_night_landscape.jpg ~/Pictures/Wallpapers/LOA_portrait.png'
+alias rson='xrandr --output HDMI-2 --mode 1920x1080 --rate 60 --rotate left --left-of eDP-1'
 alias rsoff='xrandr --output HDMI-2 --off'
 
 # Clojure aliases
@@ -188,3 +188,12 @@ alias learnpolish='cd /home/wacevedo/Documents/Books/Language/Polish && ranger'
 alias myprojects='cd /home/wacevedo/code/Projects'
 alias setlua="export LUA_DIR=/usr/bin/lua"
 alias sources='cd /home/wacevedo/code/Sources'
+alias lg='lazygit'
+alias pgg='ping -c 3 google.com'
+alias gpom='git push origin main'
+alias pythonbooks='cd /home/wacevedo/Documents/Books/IT/Programming/Languages/Python && ranger'
+alias pythontraining='mytrain && cd Python/Testing/Learning'
+alias typetrain='smbdocs && cd Typing'
+alias ph='repos && cd personal_history'
+alias mylab="cd $HOME/jupyter && source env/.venv/bin/activate && jupyter lab &"
+alias projects='cd /home/wacevedo/code/Projects'
