@@ -1,5 +1,6 @@
- -- Map leader
+-- Map leader and local leader
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ","
 
 vim.g.mkdp_browser = '/usr/bin/vivaldi-stable'
 vim.o.syntax = 'on'
