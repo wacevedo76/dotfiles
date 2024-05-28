@@ -25,7 +25,7 @@ alias ea='dotfiles && vim aliases'
 alias ezshfn='dotfiles && vim zsh_functions'
 alias ezshrc='dotfiles && vim zshrc'
 alias esshconf='vim $HOME/.ssh/config'
-alias myown='s chown -R ${USER}:${USER} ./*'
+alias myown='s chown -R ${USER}:users ./*'
 alias rless='less -r'
 alias sranger='s ranger .'
 alias sz='source /home/wacevedo/.zshrc'
@@ -102,7 +102,7 @@ alias tmain='tnsd Main SSH && vimwiki && tnsd VimWiki && cd && tnsd Audio'
 # vimwiki aliases
 alias vw='vim -c VimwikiIndex'
 alias vw2='vim $HOME/code/*/vimwiki2/vimwiki2_index.wiki'
-alias vimwiki='cd $HOME/code/wacevedo76/vimwiki'
+alias vimwiki='cd $HOME/code/Repos/vimwiki'
 alias vwp='cd $HOME/code/*/vimwiki && git push origin main'
 
 # git aliases
@@ -119,7 +119,6 @@ alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 alias docked='docker run --rm -it -v ${PWD}:/rails -v ruby-bundle-cache:/bundle -p 3000:3000 ghcr.io/rails/cli'
 
 # Python aliases
-alias activate='source ./bin/activate'
 # Python Django Unit tests
 alias rat='c python manage.py test'
 alias rsrvr='c python manage.py runserver'
@@ -197,3 +196,8 @@ alias typetrain='smbdocs && cd Typing'
 alias ph='repos && cd personal_history'
 alias mylab="cd $HOME/jupyter && source env/.venv/bin/activate && jupyter lab &"
 alias projects='cd /home/wacevedo/code/Projects'
+alias neorg='cd /home/wacevedo/notes'
+alias smc='mycode && source .env/venv/bin/activate && cd -' # smc - Source my code (virtual environment)
+alias myitnotes='cd /home/wacevedo/code/Repos/itnotes'
+
+alias myconfig='cd /home/wacevedo/.config'

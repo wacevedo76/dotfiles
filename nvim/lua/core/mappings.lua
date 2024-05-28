@@ -3,6 +3,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ","
 
 vim.g.mkdp_browser = '/usr/bin/vivaldi-stable'
+
+
 vim.o.syntax = 'on'
 vim.o.autoindent = true
 vim.o.smartindent = true
@@ -12,9 +14,15 @@ vim.o.shiftwidth = 2
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.wrap = false
-
 vim.o.number = true
 vim.o.relativenumber = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.virtualedit = 'block'
+vim.o.clipboard = 'unnamedplus'
+vim.o.inccommand = "split"
+vim.o.ignorecase = true
+vim.o.termguicolors = true
 
 -- Coding mappings
 vim.keymap.set('i', 'jk', '<esc>')
