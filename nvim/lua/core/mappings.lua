@@ -4,7 +4,6 @@ vim.g.maplocalleader = ","
 
 vim.g.mkdp_browser = '/usr/bin/vivaldi-stable'
 
-
 vim.o.syntax = 'on'
 vim.o.autoindent = true
 vim.o.smartindent = true
@@ -24,6 +23,9 @@ vim.o.inccommand = "split"
 vim.o.ignorecase = true
 vim.o.termguicolors = true
 
+-- Neorg
+vim.keymap.set('n', '<leader>tc', ':Neorg toggle-concealer<cr>')
+
 -- Coding mappings
 vim.keymap.set('i', 'jk', '<esc>')
 
@@ -34,13 +36,12 @@ vim.keymap.set('i', "''", "''<esc>:let leavechar='\"'<cr>i")
 vim.keymap.set('i', '``', '``<esc>:let leavechar="`"<cr>i')
 vim.keymap.set('i', '""', '""<esc>i')
 vim.keymap.set('n', '<esc>', ':noh<cr>')
--- vim.cmd('inoremap <C-j> <esc>/[)}\"'\]`>]<cr>:nohl<cr>a')
--- vim.keymap.set('i', '<C-j>', "<esc>[)}\"']`>]<cr>:nohl<cr>a")
+vim.cmd([[ inoremap <C-j> <esc>/[)}"'\]`>]<cr>:nohl<cr>a ]])
 
 vim.keymap.set('n', '<F7>', 'gg=<C-o><C-o>')
 
 vim.keymap.set('n', '<leader>tt', ':set nu! rnu!<CR>')
-vim.keymap.set('n', '<leader>ww', ':set wrap!<CR>')
+vim.keymap.set('n', '<leader>sw', ':set wrap!<CR>')
 vim.keymap.set('n', '<c-h>', '<c-w>h')
 vim.keymap.set('n', '<c-j>', '<c-w>j')
 vim.keymap.set('n', '<c-k>', '<c-w>k')
