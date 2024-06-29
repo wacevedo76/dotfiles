@@ -7,13 +7,19 @@ export HIST_STAMPS="%d/%m/%y %T "
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# XDG mappings
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_LOG_FILE="$HOME/.local/state/nvim"
 
-
+# xdg-mime bindings
+xdg-mime default mpv.desktop video/mp4
+xdg-mime default mpv.desktop video/x-matroska
+xdg-mime default mpv.desktop video/quicktime
+xdg-mime default mpv.desktop video/x-msvideo
+xdg-mime default mpv.desktop video/webm
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -129,7 +135,15 @@ export PATH="$NPM_GLOBAL/bin:$PATH"
 # Open AI GPT-3 API key reference
 [[ -f "$HOME/.config/.credentials/chatgpt" ]] && export OPENAI_API_KEY=$(cat "$HOME/.config/.credentials/chatgpt")
 
+# Claude AI API key reference
+[[ -f "$HOME/.config/.credentials/claudeai" ]] && export CLAUDEAI_API_KEY=$(cat "$HOME/.config/.credentials/claudeai")
+
+# exports zen air bluetooth Mac address
+export ZENAIR=$(cat $HOME/.config/.credentials/zen_air)
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export OPENAI_API_KEY=$(cat $HOME/.config/.credentials/chatgpt)
+if [ -f "/home/wacevedo/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/wacevedo/.config/fabric/fabric-bootstrap.inc"; fi
+
+# set terminal navigation to vi keybindings
 bindkey -v
