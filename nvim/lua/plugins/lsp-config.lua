@@ -1,63 +1,48 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    lazy = false,
+	{
+		"williamboman/mason.nvim",
+		lazy = false,
+		config = function()
+			require("mason").setup()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = false,
     config = function()
       require("mason").setup()
+      require("mason-lspconfig").setup()
+      -- require("mason-lspconfig").setup_handlers {
+      --   function (server_name) -- default handler (optional)
+      --     requre("lspconfig")[server_name].setup {}
+      --   end
+      -- }
     end
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
-    opts = {
-      auto_install = true
+	},
+	{
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      "saghen/blink.cmp",
+		  "williamboman/mason.nvim",
+		  "williamboman/mason-lspconfig.nvim",
     },
-    config = function()
-       require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "bashls",
-          "html",
-          "emmet_ls",
-          "solargraph",
-          "tsserver",
-          "jsonls",
-          "pyright"
-        }
-      })
-    end
-  },
-  {
-    "neovim/nvim-lspconfig",
-    lazy = false,
-    config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.bashls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities
-      })
-      lspconfig.emmet_ls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.solargraph.setup({
-        capabilities = capabilities
-      })
-      lspconfig.tsserver.setup({
-        capabilities = capabilities
-      })
-      lspconfig.jsonls.setup({
-        capabilities = capabilities
-      })
-      lspconfig.pyright.setup({
-        capabilities = capabilities
-      })
+    opts = {
+      servers = {
+        lua_ls = {}
+      }
+    },
+    config = function(_, opts)
+      local lspconfig = require('lspconfig')
+      for server, config in pairs(opts.servers) do
+        -- passing config.capabliities to blink.cmp merges with the capabilities in your
+        -- opts[server].setup(config)
+        config.capabilities = 
+        require('blink.cmp').get_lsp_capabilities()
+        local lspconfig = require('lspconfig')
+
+        -- lspconfig['lua-ls'].setup({ capabilities = capabilities })
+      end
     end
   }
 }
